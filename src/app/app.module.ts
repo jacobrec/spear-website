@@ -3,16 +3,31 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { AppComponent } from './app.component';
+import { AppComponent } from './site/app.component';
+
+
+// Material
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MdButtonModule, MdCheckboxModule } from '@angular/material';
+import { MatToolbarModule } from '@angular/material';
+
+// My Stuff
+import { MainPageComponent } from './site/mainpage/main.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MainPageComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MdButtonModule,
+    MdCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]

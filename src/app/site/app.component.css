@@ -1,0 +1,28 @@
+#navbar{
+    width: 100vw;
+}
+#navlist li {
+    display: inline;
+    float: left;
+    padding: 10px;
+    cursor: pointer;
+}
+#navlist li:hover {
+    color: #666;
+}
+#navlist{
+    float: right;
+}
+.spacer {
+  flex: 1 1 auto;
+}
+#spearlink{
+    cursor: pointer;
+}
+
+footer{
+    width: 100vw;
+    text-align: center;
+    background-color: #333;
+    color:#ccc;
+}

@@ -1,6 +1,12 @@
-# SpearWebsite
+# Spear Website
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.4.
+
+## Setup
+1. install [NodeJS](https://nodejs.org/en/) LTS
+2. run `npm install -g @angular/cli`
+3. in the project directory run `npm install --save @angular/material @angular/cdk`
+4. in the project directory run `npm install --save @angular/animations`
 
 ## Development server
 
