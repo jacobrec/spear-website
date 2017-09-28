@@ -1,19 +1,44 @@
-<md-toolbar color="primary" id="navbar">
-    <h1 id="spearlink">
+<div (window:resize)="onResize($event)"></div>
+<div id="notFooter">
+  <md-toolbar *ngIf="isDesktop" color="primary" id="navbar">
+    <h1 (click)="shouldShowMain()" id="spearlink">
       {{title}}
     </h1>
     <span class="spacer"></span>
     <ul id="navlist">
-        <li>About</li>
-        <li>Blog</li>
-        <li>Sponsors</li>
+      <li><button (click)="shouldShowAbout()" md-button routerLink=".">About</button></li>
+      <li><button (click)="shouldShowBlog()" md-button routerLink=".">Blog</button></li>
+      <li><button (click)="shouldShowSponsors()" md-button routerLink=".">Sponsors</button></li>
     </ul>
-</md-toolbar>
+  </md-toolbar>
 
-<main-info></main-info>
+  <md-toolbar *ngIf="isMobile" color="primary" id="navbar">
+    <h1 (click)="shouldShowMain()" id="spearlink">
+      {{title}}
+    </h1>
+    <span class="spacer"></span>
 
+    <md-menu #menu="mdMenu">
+      <button (click)="shouldShowAbout()" md-menu-item routerLink=".">About</button>
+      <button (click)="shouldShowBlog()" md-menu-item routerLink=".">Blog</button>
+      <button (click)="shouldShowSponsors()" md-menu-item routerLink=".">Sponsors</button>
+    </md-menu>
+
+    <button md-icon-button [mdMenuTriggerFor]="menu">
+        <md-icon>more_vert</md-icon>
+      </button>
+
+  </md-toolbar>
+
+
+
+
+  <main-page *ngIf="showMain"></main-page>
+  <about-page *ngIf="showAbout"></about-page>
+  <blog-page *ngIf="showBlog"></blog-page>
+  <sponsors-page *ngIf="showSponsors"></sponsors-page>
+
+</div>
 <footer color="primary">
-    Contact us: spearua@ualberta.ca <br>
-    Follow us: @spaceualberta <br>
-    Like us: facebook.com/SpaceUAlberta <br>
+  Contact us: spearua@ualberta.ca <br> Follow us: @spaceualberta <br> Like us: facebook.com/SpaceUAlberta <br>
 </footer>

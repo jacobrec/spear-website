@@ -1,28 +1,46 @@
-#navbar{
-    width: 100vw;
+#navbar {
+  width: 100vw;
 }
+
 #navlist li {
-    display: inline;
-    float: left;
-    padding: 10px;
-    cursor: pointer;
+  display: inline;
+  float: left;
+  cursor: pointer;
+  padding: 0;
+  height: 100%;
 }
-#navlist li:hover {
-    color: #666;
+
+#navlist li button {
+  padding: 0 10px;
+  height: 100%;
 }
-#navlist{
-    float: right;
+
+#navlist {
+  float: right;
+  margin: 0;
+  height: 100%;
 }
+
 .spacer {
   flex: 1 1 auto;
 }
-#spearlink{
-    cursor: pointer;
+
+#spearlink {
+  cursor: pointer;
 }
 
-footer{
-    width: 100vw;
-    text-align: center;
-    background-color: #333;
-    color:#ccc;
+
+
+#notFooter {
+  padding-bottom: 60px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  height: 60px;
+  width: 100vw;
+  text-align: center;
+  background-color: #333;
+  color: #ccc;
 }

@@ -5,20 +5,32 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './site/app.component';
 
+import { Ng2FittextModule } from "ng2-fittext/ng2fittext";
 
 // Material
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MdButtonModule, MdCheckboxModule } from '@angular/material';
 import { MatToolbarModule } from '@angular/material';
-
+import { MatCardModule } from '@angular/material';
+import { MatPaginatorModule } from '@angular/material';
+import { MatGridListModule } from '@angular/material';
+import { MatMenuModule } from '@angular/material';
+import { MatIconModule } from '@angular/material';
 // My Stuff
 import { MainPageComponent } from './site/mainpage/main.component';
+import { AboutPageComponent } from './site/about/about.component';
+import { BlogPageComponent } from './site/blog/blog.component';
+import { SponsorsPageComponent } from './site/sponsors/sponsors.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainPageComponent
+    MainPageComponent,
+    BlogPageComponent,
+    AboutPageComponent,
+    SponsorsPageComponent
+
   ],
   imports: [
     BrowserModule,
@@ -27,7 +39,13 @@ import { MainPageComponent } from './site/mainpage/main.component';
     BrowserAnimationsModule,
     MatToolbarModule,
     MdButtonModule,
-    MdCheckboxModule
+    MdCheckboxModule,
+    MatCardModule,
+    MatPaginatorModule,
+    MatGridListModule,
+    Ng2FittextModule,
+    MatMenuModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

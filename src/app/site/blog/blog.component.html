@@ -1,0 +1,18 @@
+<md-paginator [length]="pageLength" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" (page)="pageEvent = updatePages($event)">
+</md-paginator>
+
+<md-list>
+  <md-list-item *ngFor="let post of subSetPosts">
+    <md-card class="blogPost">
+      <md-card-header>
+        <md-card-title>{{post.name}}</md-card-title>
+        <md-card-subtitle>{{post.author}} || {{post.date}}</md-card-subtitle>
+      </md-card-header>
+      <md-card-content>
+        <p md-line> {{post.body}} </p>
+      </md-card-content>
+    </md-card>
+  </md-list-item>
+</md-list>
+<md-paginator [length]="pageLength" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" (page)="pageEvent = updatePages($event)">
+</md-paginator>

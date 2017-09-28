@@ -7,6 +7,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 2. run `npm install -g @angular/cli`
 3. in the project directory run `npm install --save @angular/material @angular/cdk`
 4. in the project directory run `npm install --save @angular/animations`
+5. in the project directory run `npm install --save ng2-fittext`
 
 ## Development server
 
