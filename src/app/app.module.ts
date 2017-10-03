@@ -22,6 +22,8 @@ import { AboutPageComponent } from './site/about/about.component';
 import { BlogPageComponent } from './site/blog/blog.component';
 import { SponsorsPageComponent } from './site/sponsors/sponsors.component';
 
+import { BlogService } from './site/blog/blog.service';
+
 
 @NgModule({
   declarations: [
@@ -47,7 +49,7 @@ import { SponsorsPageComponent } from './site/sponsors/sponsors.component';
     MatMenuModule,
     MatIconModule
   ],
-  providers: [],
+  providers: [BlogService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
