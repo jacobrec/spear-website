@@ -1,10 +1,10 @@
-package main
+package sql
 
 import (
 	"bufio"
 	"database/sql"
 	"fmt"
-	_ "github.com/go-sql-driver/mysql"
+	_ "github.com/go-sql-driver/mysql" // Needs the specific driver
 	"log"
 	"os"
 )
@@ -52,8 +52,8 @@ func getData() {
 	}
 
 }
-
-func createDatabase() {
+/*CreateDatabase Creates a new sql database in proper format*/
+func CreateDatabase() {
 	db, err := sql.Open("mysql",
 		getUser()+":"+getPassword()+"@/")
 
@@ -84,7 +84,9 @@ func createDatabase() {
 	}
 
 }
-func removeDatabase() {
+
+/*RemoveDatabase removes the sql database*/
+func RemoveDatabase() {
 	db, err := sql.Open("mysql",
 		getUser()+":"+getPassword()+"@/")
 	defer db.Close()
