@@ -78,14 +78,12 @@ func getPostByID(id int) blog.Post {
 
 /*GetPostsByTag gets all the posts with the tag specified*/
 func GetPostsByTag(tag string) []blog.Post {
-	stmt, _ := db.Prepare(`SELECT b.post, b.author, b.title, b.timestamp
+	stmt, _ := db.Prepare(`SELECT b.id
 							FROM blogtags bt, blogposts b, tags t
 							WHERE bt.tag = t.id
 							AND (t.tag IN (?))
 							AND b.id = bt.post
 							GROUP BY b.id`)
-	var btext, bauthor, btitle string
-	var timestamp uint64
 	i := 0
 	val, _ := stmt.Query(tag)
 
@@ -93,7 +91,9 @@ func GetPostsByTag(tag string) []blog.Post {
 
 	defer val.Close()
 	for val.Next() {
-		err := val.Scan(&btext, &bauthor, &btitle, &timestamp)
+
+		var id int
+		err := val.Scan(&id)
 		if err != nil {
 			if err == sql.ErrNoRows {
 				break
@@ -101,7 +101,9 @@ func GetPostsByTag(tag string) []blog.Post {
 				log.Fatal(err)
 			}
 		}
-		a[i] = blog.Post{Post: btext, Author: bauthor, Title: btitle, Timestamp: timestamp}
+
+
+		a[i] = getPostByID(id)
 		i++
 	}
 
