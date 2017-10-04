@@ -80,8 +80,21 @@ func CreateDatabase() {
 	if err != nil {
 		panic(err)
 	} else {
-		fmt.Println("Created table")
+		fmt.Println("Created blog table")
 	}
+	_, err = db.Exec("CREATE TABLE tags (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, tag TEXT)")
+	if err != nil {
+		panic(err)
+	} else {
+		fmt.Println("Created tag table")
+	}
+	_, err = db.Exec("CREATE TABLE blogtags (tag INT, post INT)")
+	if err != nil {
+		panic(err)
+	} else {
+		fmt.Println("Created blogtag table")
+	}
+
 
 }
 

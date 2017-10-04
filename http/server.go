@@ -29,8 +29,22 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		w.Write(js)
 	}
 }
+func taghandler(w http.ResponseWriter, r *http.Request) {
+	tag := strings.Split(r.URL.Path, "/blog/tags/")[1]
+		bp := sql.GetPostsByTag(tag)
+		js, err := json.Marshal(bp)
+		if err != nil {
+			http.Error(w, err.Error(), http.StatusInternalServerError)
+			return
+		}
+		w.Header().Set("Content-Type", "application/json")
+		w.Header().Set("Access-Control-Allow-Origin", "*")
+
+		w.Write(js)
+}
 /*Begin starts the blog webserver on a specified port*/
 func Begin(port string){
     http.HandleFunc("/blog/", handler)
+    http.HandleFunc("/blog/tags/", taghandler)
     http.ListenAndServe(port, nil)
 }
