@@ -10,24 +10,29 @@ import (
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
-	info := strings.Split(strings.Split(r.URL.Path, "/blog/")[1], "+")
-	index, err := strconv.Atoi(info[0])
-	number, err2 := strconv.Atoi(info[1])
+	info := strings.Split(strings.Replace(r.URL.Path, "/blog/", "", 1), "+")
+	if len(info) > 2 {
+		index, err := strconv.Atoi(info[0])
+		number, err2 := strconv.Atoi(info[1])
 
-	if err != nil || err2 != nil {
-		fmt.Fprintf(w, "Error, input not recognised %q\n", r.URL.Path)
-	} else {
-		bp := sql.GetPosts(index, number)
-		js, err := json.Marshal(bp)
-		if err != nil {
-			http.Error(w, err.Error(), http.StatusInternalServerError)
+		if err != nil || err2 != nil {
+			fmt.Fprintf(w, "Error, input not recognised %q\n", r.URL.Path)
+		} else {
+			bp := sql.GetPosts(index, number)
+			js, err := json.Marshal(bp)
+			if err != nil {
+				http.Error(w, err.Error(), http.StatusInternalServerError)
+				return
+			}
+			w.Header().Set("Content-Type", "application/json")
+			w.Header().Set("Access-Control-Allow-Origin", "*")
+
+			w.Write(js)
 			return
 		}
-		w.Header().Set("Content-Type", "application/json")
-		w.Header().Set("Access-Control-Allow-Origin", "*")
-
-		w.Write(js)
 	}
+	fmt.Fprintf(w, "Error, input not recognised %q\n", r.URL.Path)
+
 }
 func taghandler(w http.ResponseWriter, r *http.Request) {
 	tag := strings.Split(r.URL.Path, "/blog/tags/")[1]
