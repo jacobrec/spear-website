@@ -9,7 +9,7 @@ type Post struct {
 	Author    string `json:"author"`
 	Post      string `json:"post"`
 	Timestamp uint64 `json:"timestamp"`
-	Tags []string
+	Tags      []string
 }
 
 // SetDateToNow sets the posts current timestamp to right now.

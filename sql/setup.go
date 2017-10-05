@@ -52,6 +52,7 @@ func getData() {
 	}
 
 }
+
 /*CreateDatabase Creates a new sql database in proper format*/
 func CreateDatabase() {
 	db, err := sql.Open("mysql",
@@ -94,7 +95,6 @@ func CreateDatabase() {
 	} else {
 		fmt.Println("Created blogtag table")
 	}
-
 
 }
 

@@ -76,6 +76,14 @@ func getPostByID(id int) blog.Post {
 	return blog.Post{Post: btext, Author: bauthor, Title: btitle, Timestamp: timestamp, Tags: tags[:i]}
 }
 
+/*GetPostsBySearch takes in an string, returns posts that match the search*/
+func GetPostsBySearch(search string) []blog.Post {
+	//TODO: implement this method
+	a := make([]blog.Post, 1)
+	a[1] = getPostByID(1)
+	return a
+}
+
 /*GetPostsByTag gets all the posts with the tag specified*/
 func GetPostsByTag(tag string) []blog.Post {
 	stmt, _ := db.Prepare(`SELECT b.id
@@ -101,7 +109,6 @@ func GetPostsByTag(tag string) []blog.Post {
 				log.Fatal(err)
 			}
 		}
-
 
 		a[i] = getPostByID(id)
 		i++
