@@ -1,0 +1,49 @@
+html {
+    background: radial-gradient(black 15%, transparent 16%) 0 0, radial-gradient(black 15%, transparent 16%) 8px 8px, radial-gradient(rgba(255, 255, 255, .1) 15%, transparent 20%) 0 1px, radial-gradient(rgba(255, 255, 255, .1) 15%, transparent 20%) 8px 9px;
+    background-color: #282828;
+    background-size: 16px 16px;
+    --body-width: 80vw;
+}
+
+body {
+    background-color: #eee;
+    width: var(--body-width);
+    margin-left: 10vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+h1{
+    font-family: sans-serif;
+}
+
+#editor {
+    overflow-y: hidden;
+    width: calc(var(--body-width) - 10px);
+}
+
+input[type="text"] {
+    margin: 10px;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid black;
+}
+
+#title {
+    min-width: 200px;
+    max-width: calc(var(--body-width) - 20px)
+}
+
+#author {
+    min-width: 100px;
+    max-width: calc(var(--body-width) - 20px)
+
+}
+
+#tags {
+    min-width: 300px;
+    max-width: calc(var(--body-width) - 20px)
+
+}
