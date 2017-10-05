@@ -15,6 +15,7 @@ The website for the Space Alberta Exploration Robotics Club.
 ## Setup
 ### Linux
 1. install [NodeJS](https://nodejs.org/en/) LTS
+2. Install Angular 2 CLI with `npm install -g @angular/cli` run this as sudo
 2. clone this project somewhere on your device eg `git clone git@github.com:jacobrec/spear-website.git`
 3. in the same directory(the parent directory of the project) where you cloned the project run the following commands
 ```bash
