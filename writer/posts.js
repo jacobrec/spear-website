@@ -78,7 +78,6 @@ function viewPost(index) {
     let post = item.jsonPost;
     console.log(post);
     alert(post.post);
-
 }
 
 function deletePost(index) {
