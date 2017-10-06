@@ -4,7 +4,6 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-
 /*Begin starts the blog webserver on a specified port*/
 func Begin(port string) {
 
@@ -17,5 +16,11 @@ func Begin(port string) {
 		posts.PUT("/", putPost)
 		posts.DELETE("/:id", deletePost)
 	}
+
+	writer := router.Group("/author")
+	{
+		writer.Static("/", "writer/")
+	}
+
 	router.Run(port)
 }

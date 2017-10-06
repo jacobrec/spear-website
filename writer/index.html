@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+        <head>
+                <link rel="stylesheet" href="main.css">
+                <script src="stretchy.js" data-filter=".stretch *"></script>
+                <script src="main.js"></script>
+                <!-- <script src="http://cdn.ckeditor.com/4.7.3/full/ckeditor.js"></script> -->
+                <script src="http://cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
+                <!-- <script src="http://cdn.ckeditor.com/4.7.3/basic/ckeditor.js"></script> -->
+        </head>
+
+        <body>
+            <div id="body">
+                <h1>SPEAR Blog</h1>
+                <div class="stretch">
+                        <input id="title" placeholder="Post Title" type="text" />
+                </div>
+                <div class="stretch">
+                        <input id="author" placeholder="Author's Name" type="text" />
+                </div>
+                <form id="editor">
+                        <textarea name="editor1" id="editor1" rows="10" cols="80"></textarea>
+                </form>
+                <div class="stretch">
+                        <input id="tags" placeholder="Space seperated Tags" type="text" />
+                </div>
+                <div>
+                        <input id="but_post" type="button" value="Post" onclick="post()" />
+                </div>
+            </div>
+            <footer>
+                <input type="button" value="Manage Images" onclick="document.location.href='images.html'"/>
+                <input type="button" value="Manage Posts" onclick="document.location.href='posts.html'"/>
+            </footer>
+        </body>
+
+
+        <script>
+                setup();
+        </script>
+</html>
+
+
+
+
+​

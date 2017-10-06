@@ -73,7 +73,7 @@ func getPostByID(id int) blog.Post {
 		i++
 	}
 
-	return blog.Post{Post: btext, Author: bauthor, Title: btitle, Timestamp: timestamp, Tags: tags[:i]}
+	return blog.Post{ID: id, Post: btext, Author: bauthor, Title: btitle, Timestamp: timestamp, Tags: tags[:i]}
 }
 
 /*GetPostsBySearch takes in an string, returns posts that match the search*/
@@ -157,4 +157,13 @@ func AddPost(post blog.Post) {
 	tx.Commit()
 	fmt.Print("Added to database:")
 	fmt.Println(post)
+}
+/*DeletePost deletes a blogpost from the database*/
+func DeletePost(id int){
+	delPostStmt, _ := db.Prepare("DELETE FROM blogposts WHERE id = ?")
+	delTagBlogsStmt, _ := db.Prepare("DELETE FROM blogtags WHERE post = ?")
+
+	delPostStmt.Exec(id)
+	delTagBlogsStmt.Exec(id)
+
 }

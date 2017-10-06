@@ -5,11 +5,12 @@ import "time"
 // Post is a datatype to hold a single blog post,
 // ensures consitancy across I/O
 type Post struct {
-	Title     string `json:"title"`
-	Author    string `json:"author"`
-	Post      string `json:"post"`
-	Timestamp uint64 `json:"timestamp"`
-	Tags      []string
+	ID        int      `json:"id"`
+	Title     string   `json:"title"`
+	Author    string   `json:"author"`
+	Post      string   `json:"post"`
+	Timestamp uint64   `json:"timestamp"`
+	Tags      []string `json:"tags"`
 }
 
 // SetDateToNow sets the posts current timestamp to right now.
