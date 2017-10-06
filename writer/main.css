@@ -1,20 +1,39 @@
+*{
+    margin: 0;
+}
 html {
     background: radial-gradient(black 15%, transparent 16%) 0 0, radial-gradient(black 15%, transparent 16%) 8px 8px, radial-gradient(rgba(255, 255, 255, .1) 15%, transparent 20%) 0 1px, radial-gradient(rgba(255, 255, 255, .1) 15%, transparent 20%) 8px 9px;
     background-color: #282828;
     background-size: 16px 16px;
     --body-width: 80vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 body {
-    background-color: #eee;
     width: var(--body-width);
-    margin-left: 10vw;
+    min-height: 100vh;
+    --footer-height: 50px;
+    margin: 0!important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+#body {
+    background-color: #eee;
+    margin-bottom: calc(15px + var(--footer-height));
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    width: var(--body-width);
 }
-h1{
+
+h1 {
     font-family: sans-serif;
 }
 
@@ -39,11 +58,55 @@ input[type="text"] {
 #author {
     min-width: 100px;
     max-width: calc(var(--body-width) - 20px)
-
 }
 
 #tags {
     min-width: 300px;
     max-width: calc(var(--body-width) - 20px)
+}
 
+footer {
+    position: absolute;
+    bottom: 0;
+    padding: 0;
+    margin: 0;
+    height: var(--footer-height);
+    background-color: #eee;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+}
+
+footer input[type="button"] {
+    height: var(--footer-height);
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-right: 1px solid black;
+    padding: 10px;
+    cursor: pointer;
+}
+
+footer input[type="button"]:hover {
+    background: #ccc;
+}
+
+.blogPostPreview {
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 10px;
+    background: #ddd;
+    border: 1px solid black;
+}
+
+.blogPostPreviewTitle {}
+
+.blogPostPreviewAuthor {}
+
+.blogPostPreviewTimestamp {}
+
+.blogPostPreviewButtonBar {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
 }
