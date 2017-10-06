@@ -9,7 +9,7 @@ import { Ng2FittextModule } from "ng2-fittext/ng2fittext";
 
 // Material
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MdButtonModule, MdCheckboxModule } from '@angular/material';
+import { MatButtonModule, MatCheckboxModule } from '@angular/material';
 import { MatToolbarModule } from '@angular/material';
 import { MatCardModule } from '@angular/material';
 import { MatPaginatorModule } from '@angular/material';
@@ -40,8 +40,8 @@ import { BlogService } from './site/blog/blog.service';
     HttpModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    MdButtonModule,
-    MdCheckboxModule,
+    MatButtonModule,
+    MatCheckboxModule,
     MatCardModule,
     MatPaginatorModule,
     MatGridListModule,

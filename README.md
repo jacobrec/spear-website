@@ -16,7 +16,7 @@ The website for the Space Alberta Exploration Robotics Club.
 ### Linux
 1. install [NodeJS](https://nodejs.org/en/) LTS
 2. Install Angular 2 CLI with `npm install -g @angular/cli` run this as sudo
-2. clone this project somewhere on your device eg `git clone git@github.com:jacobrec/spear-website.git`
+2. clone this project somewhere on your device eg `git clone https://github.com/jacobrec/spear-website.git`
 3. in the same directory(the parent directory of the project) where you cloned the project run the following commands
 ```bash
 ng new spear
@@ -33,7 +33,26 @@ rm -rf spear
 ```
 This downloads the node packages we're using
 ### Windows
-no instructions yet
+1. install [NodeJS](https://nodejs.org/en/) LTS
+2. Open CMD Prompt and Install Angular 2 CLI with `npm install -g @angular/cli`
+3. Sign up for [Github](https://github.com)
+3. Install [git](https://git-scm.com/download/win)
+4. Open git bash where you want the project on your computer
+5. Run `git clone https://github.com/jacobrec/spear-website.git` in git bash
+5. Run these commands also in git bash
+```bash
+ng new spear
+cd spear
+npm install --save @angular/material @angular/cdk
+npm install --save @angular/animations
+npm install --save ng2-fittext
+cd ../
+cp -a spear-website/src/. spear/src/
+cp -a spear-website/.angular-cli.json spear
+cp -a spear-website/README.md spear
+cp -a spear/. spear-website/
+rm -rf spear
+```
 ### Mac
 no instructions yet
 
