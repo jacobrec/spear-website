@@ -1,18 +1,18 @@
-<md-paginator [length]="pageLength" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" (page)="pageEvent = updatePages($event)">
-</md-paginator>
+<mat-paginator [length]="pageLength" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" (page)="pageEvent = updatePages($event)">
+</mat-paginator>
 
-<md-list>
-  <md-list-item *ngFor="let post of subSetPosts">
-    <md-card class="blogPost">
-      <md-card-header>
-        <md-card-title>{{post.title}}</md-card-title>
-        <md-card-subtitle>{{post.author}} || {{post.timestamp}}</md-card-subtitle>
-      </md-card-header>
-      <md-card-content>
-        <p md-line> {{post.post}} </p>
-      </md-card-content>
-    </md-card>
-  </md-list-item>
-</md-list>
-<md-paginator [length]="pageLength" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" (page)="pageEvent = updatePages($event)">
-</md-paginator>
+<mat-list>
+  <mat-list-item *ngFor="let post of subSetPosts">
+    <mat-card class="blogPost">
+      <mat-card-header>
+        <mat-card-title>{{post.title}}</mat-card-title>
+        <mat-card-subtitle>{{post.author}} || {{post.timestamp}}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p mat-line> {{post.post}} </p>
+      </mat-card-content>
+    </mat-card>
+  </mat-list-item>
+</mat-list>
+<mat-paginator [length]="pageLength" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" (page)="pageEvent = updatePages($event)">
+</mat-paginator>
