@@ -6,9 +6,12 @@
     </h1>
     <span class="spacer"></span>
     <ul id="navlist">
-      <li><button (click)="shouldShowAbout()" mat-button routerLink=".">About</button></li>
-      <li><button (click)="shouldShowBlog()" mat-button routerLink=".">Blog</button></li>
-      <li><button (click)="shouldShowSponsors()" mat-button routerLink=".">Sponsors</button></li>
+      <li><button (click)="shouldShowAbout()" mat-menu-item routerLink=".">About</button></li>
+      <li><button (click)="shouldShowTeam()" mat-menu-item routerLink=".">Team</button></li>
+      <li><button (click)="shouldShowMR1()" mat-menu-item routerLink=".">Mars Rover 1</button></li>
+      <li><button (click)="shouldShowSponsors()" mat-menu-item routerLink=".">Sponsors</button></li>
+      <li><button (click)="shouldShowContatc()" mat-menu-item routerLink=".">Contact</button></li>
+      <li><button (click)="shouldShowBlog()" mat-menu-item routerLink=".">Blog</button></li>
     </ul>
   </mat-toolbar>
 
@@ -20,8 +23,11 @@
 
     <mat-menu #menu="matMenu">
       <button (click)="shouldShowAbout()" mat-menu-item routerLink=".">About</button>
-      <button (click)="shouldShowBlog()" mat-menu-item routerLink=".">Blog</button>
-      <button (click)="shouldShowSponsors()" mat-menu-item routerLink=".">Sponsors</button>
+      <button (click)="shouldShowBlog()" mat-menu-item routerLink=".">Team</button>
+      <button (click)="shouldShowSponsors()" mat-menu-item routerLink=".">Mars Rover 1</button>
+      <button (click)="shouldShowAbout()" mat-menu-item routerLink=".">Sponsors</button>
+      <button (click)="shouldShowBlog()" mat-menu-item routerLink=".">Contact</button>
+      <button (click)="shouldShowSponsors()" mat-menu-item routerLink=".">Blog</button>
     </mat-menu>
 
     <button mat-icon-button [matMenuTriggerFor]="menu">
@@ -37,6 +43,9 @@
   <about-page *ngIf="showAbout"></about-page>
   <blog-page *ngIf="showBlog"></blog-page>
   <sponsors-page *ngIf="showSponsors"></sponsors-page>
+  <team-page *ngIf="showTeam"></team-page>
+  <mr-page *ngIf="showMR1"></mr-page>
+  <contact-page *ngIf="showContact"></contact-page>
 
 </div>
 <footer color="primary">

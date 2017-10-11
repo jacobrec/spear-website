@@ -21,6 +21,9 @@ import { MainPageComponent } from './site/mainpage/main.component';
 import { AboutPageComponent } from './site/about/about.component';
 import { BlogPageComponent } from './site/blog/blog.component';
 import { SponsorsPageComponent } from './site/sponsors/sponsors.component';
+import { TeamPageComponent } from './site/team/team.component';
+import { MRPageComponent } from './site/mr/mr.component';
+import { ContactPageComponent } from './site/contacts/contacts.component';
 
 import { BlogService } from './site/blog/blog.service';
 
@@ -31,7 +34,10 @@ import { BlogService } from './site/blog/blog.service';
     MainPageComponent,
     BlogPageComponent,
     AboutPageComponent,
-    SponsorsPageComponent
+    SponsorsPageComponent,
+    TeamPageComponent,
+    MRPageComponent,
+    ContactPageComponent
 
   ],
   imports: [

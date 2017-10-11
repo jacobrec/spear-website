@@ -6,7 +6,7 @@
   display: inline;
   float: left;
   cursor: pointer;
-  padding: 0;
+  padding: 5px 0;
   height: 100%;
 }
 
@@ -43,4 +43,8 @@ footer {
   text-align: center;
   background-color: #333;
   color: #ccc;
+}
+.mat-menu-item{
+    border: none;
+    color: white;
 }

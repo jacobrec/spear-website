@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { MatToolbarModule } from '@angular/material';
-import { MainPageComponent } from './mainpage/main.component'
-import { BlogPageComponent } from './blog/blog.component'
+import { MainPageComponent } from './mainpage/main.component';
+import { MatMenuModule } from '@angular/material';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,11 +10,14 @@ import { BlogPageComponent } from './blog/blog.component'
 })
 export class AppComponent {
   title = 'SPEAR';
-  fullname = 'Space Alberta Exploration Project'
   showMain = true;
   showAbout = false;
   showSponsors = false;
   showBlog = false;
+  showTeam = false;
+  showMR1 = false;
+  showContact = false;
+
   isMobile = false;
   isDesktop = false;
 
@@ -44,7 +48,11 @@ export class AppComponent {
     this.showAbout = false;
     this.showSponsors = false;
     this.showBlog = false;
+    this.showTeam = false;
+    this.showMR1 = false;
+    this.showContact = false;
   }
+
   shouldShowMain() {
     this.shouldShowNothing();
     this.showMain = true;
@@ -60,5 +68,17 @@ export class AppComponent {
   shouldShowSponsors() {
     this.shouldShowNothing();
     this.showSponsors = true;
+  }
+  shouldShowTeam() {
+    this.shouldShowNothing();
+    this.showSponsors = true;
+  }
+  shouldShowMR1() {
+    this.shouldShowNothing();
+    this.showMR1 = true;
+  }
+  shouldShowContact() {
+    this.shouldShowNothing();
+    this.showContact = true;
   }
 }
