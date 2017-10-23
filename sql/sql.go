@@ -22,18 +22,35 @@ func OpenDatabase() {
 	}
 }
 
-/*GetPosts takes in an index and a number of posts, returns posts from index index, to index+number*/
+/*GetPosts takes in an index and a number of posts, returns posts where the id = index as well as 'number' previous posts */
 func GetPosts(index, number int) []blog.Post {
-	// TODO: Probably at some point we are going to want to make it go in reverse order, because post one will always be the oldest post
-	// maybe use https://stackoverflow.com/questions/5191503/how-to-select-the-last-record-of-a-table-in-sql
-
-	fmt.Println("prepared")
+	// TODO: currently this function compleatly ignores the index
+	s := fmt.Sprint("SELECT post, author, title, timestamp FROM blogposts ORDER BY id DESC LIMIT ", number)
+	fmt.Println(s)
+	rows,_ := db.Query(s)
+	defer rows.Close()
 	a := make([]blog.Post, number)
+	var j int
+	for rows.Next() {
+		var p blog.Post
+		fmt.Println("Pre scan")
+		err := rows.Scan(&p.Post, &p.Author, &p.Title, &p.Timestamp)
+		if err != nil {
+			log.Fatal(err)
+			continue
+		}
+		fmt.Println(p)
 
-	for i := 0; i < number; i++ {
-		a[i] = getPostByID(index + i)
+		a[j] = p
+		j++
 	}
 	return a
+}
+/*GetLastID Gets the ID of the last row*/
+func GetLastID() int{
+	var row int
+	db.QueryRow("SELECT id FROM blogposts ORDER BY id DESC LIMIT 1").Scan(&row)
+	return row
 }
 
 func getPostByID(id int) blog.Post {
@@ -80,7 +97,7 @@ func getPostByID(id int) blog.Post {
 func GetPostsBySearch(search string) []blog.Post {
 	//TODO: implement this method
 	a := make([]blog.Post, 1)
-	a[1] = getPostByID(1)
+	a[0] = getPostByID(1)
 	return a
 }
 
@@ -158,8 +175,9 @@ func AddPost(post blog.Post) {
 	fmt.Print("Added to database:")
 	fmt.Println(post)
 }
+
 /*DeletePost deletes a blogpost from the database*/
-func DeletePost(id int){
+func DeletePost(id int) {
 	delPostStmt, _ := db.Prepare("DELETE FROM blogposts WHERE id = ?")
 	delTagBlogsStmt, _ := db.Prepare("DELETE FROM blogtags WHERE post = ?")
 
