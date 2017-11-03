@@ -1,7 +1,13 @@
-#text{
-    margin: 10px 10%;
-}
+
 #title{
-    text-align: center;
+    display: flex;
+    flex-flow:column;
+    align-items: center;
+    justify-content: flex-start;
     width: 100%;
+}
+#text{
+    width: 80%;
+    margin: 10px 10%;
+
 }
