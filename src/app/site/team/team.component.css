@@ -1,5 +1,6 @@
 #text{
     margin: 10px 10%;
+
 }
 #title{
     text-align: center;
@@ -9,12 +10,12 @@
 #teamphoto1 {
   width: 700px;
   height: 400px;
-  background-image: url('../../../assets/team/teamstruct1.png');
+  background-image: url('../../../assets/team/ts.svg');
   background-size: cover;
 }
 #teamphoto2 {
     width: 700px;
-    height: 400px;
-    background-image: url('../../../assets/team/teamstruct2.png');
+    height: 430px;
+    background-image: url('../../../assets/team/ts2.svg');
     background-size: cover;
 }

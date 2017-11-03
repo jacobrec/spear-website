@@ -1,9 +1,9 @@
 <div (window:resize)="onResize($event)"></div>
 <div id="notFooter">
-  <mat-toolbar *ngIf="isDesktop" color="primary" id="navbar">
-    <h1 (click)="shouldShowMain()" id="spearlink">
-      {{title}}
-    </h1>
+  <mat-toolbar *ngIf="isDesktop" color="background" id="navbar">
+
+    <div (click)="shouldShowMain()" id="spearlink">
+    </div>
     <span class="spacer"></span>
     <ul id="navlist">
       <li><button (click)="shouldShowAbout()" mat-menu-item routerLink=".">Mission</button></li>
