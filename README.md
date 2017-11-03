@@ -6,7 +6,10 @@ The website for the Space Alberta Exploration Robotics Club.
 - Add all the images throughout the site
 - Finish team page
 - Touch up blog page
-- Implement styling
+- Ensure content matchs team drive
+- Implement styling as shown in team drive
+- Parallax Scrolling
+- Read through for spelling mistakes
 
 
 ## Setup
