@@ -3,13 +3,10 @@
 The website for the Space Alberta Exploration Robotics Club.
 
 ## TODO
-- Add content to About page
-- Add content to Home page
-- Add content to Main page
-- Add content to Sponsors page
-- Integrate Blog page with Blog server
-- Add more tabs maybe?
-- Make everything look pretty
+- Add all the images throughout the site
+- Finish team page
+- Touch up blog page
+- Implement styling
 
 
 ## Setup

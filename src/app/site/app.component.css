@@ -41,8 +41,7 @@ footer {
   height: 60px;
   width: 100vw;
   text-align: center;
-  background-color: #333;
-  color: #ccc;
+  color: white;
 }
 .mat-menu-item{
     border: none;
