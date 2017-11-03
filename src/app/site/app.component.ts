@@ -71,7 +71,7 @@ export class AppComponent {
   }
   shouldShowTeam() {
     this.shouldShowNothing();
-    this.showSponsors = true;
+    this.showTeam = true;
   }
   shouldShowMR1() {
     this.shouldShowNothing();
