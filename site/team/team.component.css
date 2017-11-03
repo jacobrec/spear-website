@@ -1,0 +1,20 @@
+#text{
+    margin: 10px 10%;
+}
+#title{
+    text-align: center;
+    width: 100%;
+}
+
+#teamphoto1 {
+  width: 700px;
+  height: 400px;
+  background-image: url('../../../assets/team/teamstruct1.png');
+  background-size: cover;
+}
+#teamphoto2 {
+    width: 700px;
+    height: 400px;
+    background-image: url('../../../assets/team/teamstruct2.png');
+    background-size: cover;
+}

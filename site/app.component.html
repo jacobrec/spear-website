@@ -1,0 +1,53 @@
+<div (window:resize)="onResize($event)"></div>
+<div id="notFooter">
+  <mat-toolbar *ngIf="isDesktop" color="primary" id="navbar">
+    <h1 (click)="shouldShowMain()" id="spearlink">
+      {{title}}
+    </h1>
+    <span class="spacer"></span>
+    <ul id="navlist">
+      <li><button (click)="shouldShowAbout()" mat-menu-item routerLink=".">Mission</button></li>
+      <li><button (click)="shouldShowTeam()" mat-menu-item routerLink=".">Team</button></li>
+      <li><button (click)="shouldShowMR1()" mat-menu-item routerLink=".">Competition</button></li>
+      <li><button (click)="shouldShowSponsors()" mat-menu-item routerLink=".">Sponsors</button></li>
+      <li><button (click)="shouldShowContact()" mat-menu-item routerLink=".">Outreach</button></li>
+      <li><button (click)="shouldShowBlog()" mat-menu-item routerLink=".">Blog</button></li>
+    </ul>
+  </mat-toolbar>
+
+  <mat-toolbar *ngIf="isMobile" color="primary" id="navbar">
+    <h1 (click)="shouldShowMain()" id="spearlink">
+      {{title}}
+    </h1>
+    <span class="spacer"></span>
+
+    <mat-menu #menu="matMenu">
+      <button (click)="shouldShowAbout()" mat-menu-item routerLink=".">Mission</button>
+      <button (click)="shouldShowTeam()" mat-menu-item routerLink=".">Team</button>
+      <button (click)="shouldShowMR1()" mat-menu-item routerLink=".">Competition</button>
+      <button (click)="shouldShowSponsors()" mat-menu-item routerLink=".">Sponsors</button>
+      <button (click)="shouldShowContact()" mat-menu-item routerLink=".">Outreach</button>
+      <button (click)="shouldShowBlog()" mat-menu-item routerLink=".">Blog</button>
+    </mat-menu>
+
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+
+  </mat-toolbar>
+
+
+
+
+  <main-page *ngIf="showMain"></main-page>
+  <about-page *ngIf="showAbout"></about-page>
+  <blog-page *ngIf="showBlog"></blog-page>
+  <sponsors-page *ngIf="showSponsors"></sponsors-page>
+  <team-page *ngIf="showTeam"></team-page>
+  <mr-page *ngIf="showMR1"></mr-page>
+  <contact-page *ngIf="showContact"></contact-page>
+
+</div>
+<footer color="primary">
+  Contact us: spearua@ualberta.ca <br> Follow us: @spaceualberta <br> Like us: facebook.com/SpaceUAlberta <br>
+</footer>
