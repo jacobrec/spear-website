@@ -6,7 +6,7 @@
   display: inline;
   float: left;
   cursor: pointer;
-  padding: 5px 0;
+  padding: 0;
   height: 100%;
 }
 
@@ -14,7 +14,9 @@
   padding: 0 10px;
   height: 100%;
 }
-
+.currentTab{
+    text-decoration: underline;
+}
 #navlist {
   float: right;
   margin: 0;

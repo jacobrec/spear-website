@@ -6,12 +6,12 @@
     </div>
     <span class="spacer"></span>
     <ul id="navlist">
-      <li><button (click)="shouldShowAbout()" mat-menu-item routerLink=".">Mission</button></li>
-      <li><button (click)="shouldShowTeam()" mat-menu-item routerLink=".">Team</button></li>
-      <li><button (click)="shouldShowMR1()" mat-menu-item routerLink=".">Competition</button></li>
-      <li><button (click)="shouldShowSponsors()" mat-menu-item routerLink=".">Sponsors</button></li>
-      <li><button (click)="shouldShowContact()" mat-menu-item routerLink=".">Outreach</button></li>
-      <li><button (click)="shouldShowBlog()" mat-menu-item routerLink=".">Blog</button></li>
+      <li><button (click)="shouldShowAbout()" [ngClass]="{'currentTab': showAbout}" mat-menu-item routerLink=".">Mission</button></li>
+      <li><button (click)="shouldShowTeam()" [ngClass]="{'currentTab': showTeam}" mat-menu-item routerLink=".">Team</button></li>
+      <li><button (click)="shouldShowMR1()" [ngClass]="{'currentTab': showMR1}" mat-menu-item routerLink=".">Competition</button></li>
+      <li><button (click)="shouldShowSponsors()"[ngClass]="{'currentTab': showSponsors}"  mat-menu-item routerLink=".">Sponsors</button></li>
+      <li><button (click)="shouldShowContact()" [ngClass]="{'currentTab': showContact}" mat-menu-item routerLink=".">Outreach</button></li>
+      <li><button (click)="shouldShowBlog()"  [ngClass]="{'currentTab': showBlog}" mat-menu-item routerLink=".">Blog</button></li>
     </ul>
   </mat-toolbar>
 
@@ -22,7 +22,7 @@
     <span class="spacer"></span>
 
     <mat-menu #menu="matMenu">
-      <button (click)="shouldShowAbout()" mat-menu-item routerLink=".">Mission</button>
+      <button (click)="shouldShowAbout()" [ngClass]="{'currentTab': showAbout}" mat-menu-item routerLink=".">Mission</button>
       <button (click)="shouldShowTeam()" mat-menu-item routerLink=".">Team</button>
       <button (click)="shouldShowMR1()" mat-menu-item routerLink=".">Competition</button>
       <button (click)="shouldShowSponsors()" mat-menu-item routerLink=".">Sponsors</button>
