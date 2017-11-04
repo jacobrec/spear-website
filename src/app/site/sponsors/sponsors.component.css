@@ -6,13 +6,25 @@
     width: 100%;
 }
 #text{
+    width: 100vw;
+}
+
+#text p{
     width: 80%;
     margin: 10px 10%;
-
 }
+
+
 .img_wrapper{
+    margin: 40px 0;
     display: flex;
     flex-flow: column;
-    width: 100%;
+    width: 100vw;
     align-items: center;
+    height: 100px;
+    background-color: white;
+    padding: 10px;
+}
+.img_wrapper img{
+    height: 100%;
 }
