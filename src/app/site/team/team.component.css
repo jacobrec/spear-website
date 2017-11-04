@@ -7,6 +7,11 @@
     width: 100%;
 }
 
+#rover_comp {
+  width: 100vw;
+  height: calc(100vw * 10 / 16);
+}
+
 #teamphoto1 {
   width: 700px;
   height: 400px;
@@ -18,4 +23,20 @@
     height: 430px;
     background-image: url('../../../assets/team/ts2.svg');
     background-size: cover;
+}
+
+.photo_grid{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+.person_photo{
+    margin: 5px;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.person_photo p{
+    margin: 0;
 }
