@@ -1,7 +1,10 @@
 #text{
-    margin: 10px 10%;
+    color: white;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    width: 100%;
 }
 #title{
-    text-align: center;
-    width: 100%;
+
 }
