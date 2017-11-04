@@ -5,9 +5,18 @@
     align-items: center;
     justify-content: flex-start;
     width: 100%;
+    font-weight: 900;
 }
 #text{
     width: 80%;
     margin: 10px 10%;
+    display: flex;
+    flex-flow:column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 80%;
 
 }
+ #text img{
+     width: 100%;
+ }
