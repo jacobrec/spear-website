@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./main.component.css'],
 })
 export class MainPageComponent {
-  fullname = 'Space Exploration Alberta Project'
+  fullname = 'Space Exploration Alberta Robotics'
 }

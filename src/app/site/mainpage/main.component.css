@@ -3,13 +3,15 @@
 }
 
 #coverphoto {
-  width: 100vw;
-  background-image: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../../../assets/coverphoto.jpg');
-  max-height: 70vh;
-  height: calc(100vw / 960 * 419);
-  /* height: calc(100vw / 960 * 419); is to try to maintain aspect ratio*/
-  min-height: 35vh;
-  background-size: cover;
+  background-image:  url('../../../assets/coverphoto.jpg');
+}
+#roverphoto {
+  background-image: url('../../../assets/rover_comp.jpg');
+}
+.mainPagePhoto{
+    width: 100vw;
+    height: calc(100vw * 9 / 16);
+    background-size: cover;
 }
 
 #title {
