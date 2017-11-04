@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MatButtonModule } from '@angular/material';
+import { MatIconModule } from '@angular/material';
 
 @Component({
   selector: 'app-root',

@@ -15,10 +15,8 @@
     </ul>
   </mat-toolbar>
 
-  <mat-toolbar *ngIf="isMobile" color="primary" id="navbar">
-    <h1 (click)="shouldShowMain()" id="spearlink">
-      {{title}}
-    </h1>
+  <mat-toolbar *ngIf="isMobile" color="background" id="navbar">
+      <div (click)="shouldShowMain()" id="spearlink"></div>
     <span class="spacer"></span>
 
     <mat-menu #menu="matMenu">
@@ -31,7 +29,7 @@
     </mat-menu>
 
     <button mat-icon-button [matMenuTriggerFor]="menu">
-        <mat-icon>more_vert</mat-icon>
+        <md-icon class="md-24">&#xE5D4;</md-icon>
       </button>
 
   </mat-toolbar>
