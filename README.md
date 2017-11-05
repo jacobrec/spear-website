@@ -5,7 +5,7 @@ The website for the Space Alberta Exploration Robotics Club.
 ## TODO
 - Add all the images throughout the site
 - Finish team page
-- Touch up blog page
+- Touch up blog page (like it currently has the date showing nanoseconds since the epoch instead of a date)
 - Ensure content matchs team drive
 - Implement styling as shown in team drive
 - Parallax Scrolling
