@@ -13,7 +13,6 @@ The website for the Space Alberta Exploration Robotics Club.
 
 ## Bug List :(
 - Blog page pagignation can't change the number of blog posts per page
-- Tabs still show selection border on chrome
 - Material ripple for buttons shows up in top left corner
 
 
