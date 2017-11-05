@@ -3,9 +3,10 @@ package sql
 import (
 	"database/sql"
 	"fmt"
+	"log"
+
 	_ "github.com/go-sql-driver/mysql" // needs the specific driver
 	"github.com/jacobrec/spearserver/blog"
-	"log"
 )
 
 var db *sql.DB
@@ -27,7 +28,7 @@ func GetPosts(index, number int) []blog.Post {
 	// TODO: currently this function compleatly ignores the index
 	s := fmt.Sprint("SELECT post, author, title, timestamp FROM blogposts ORDER BY id DESC LIMIT ", number)
 	fmt.Println(s)
-	rows,_ := db.Query(s)
+	rows, _ := db.Query(s)
 	defer rows.Close()
 	a := make([]blog.Post, number)
 	var j int
@@ -46,8 +47,9 @@ func GetPosts(index, number int) []blog.Post {
 	}
 	return a
 }
+
 /*GetLastID Gets the ID of the last row*/
-func GetLastID() int{
+func GetLastID() int {
 	var row int
 	db.QueryRow("SELECT id FROM blogposts ORDER BY id DESC LIMIT 1").Scan(&row)
 	return row
@@ -69,8 +71,52 @@ func getPostByID(id int) blog.Post {
 		}
 	}
 
-	tags := make([]string, 100)
-	stmt, _ = db.Prepare("SELECT t.tag FROM tags t, blogtags bt WHERE bt.post = ? AND t.id = bt.tag")
+	tags := GetTagsByPostId(id)
+	return blog.Post{ID: id, Post: btext, Author: bauthor, Title: btitle, Timestamp: timestamp, Tags: tags}
+}
+
+// Searches the database for posts containing the specified string
+func GetPostsBySearch(search string) []blog.Post {
+	stmt, err := db.Prepare("SELECT id, post, author, title, timestamp FROM blogposts WHERE post LIKE ?")
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	// Pads the search term with wildcard operator %
+	rows, err := stmt.Query("%" + search + "%")
+	if err != nil {
+		if err == sql.ErrNoRows {
+		} else {
+			log.Fatal(err)
+		}
+	}
+	defer rows.Close()
+
+	// Initializes all the variables required by a blog post
+	var id int
+	var text, author, title string
+	var timestamp uint64
+	// Initializes posts to an empty array. This causes an empty array to be returned instead of null
+	posts := make([]blog.Post, 0)
+	// Adds all the found blog posts to the array
+	for rows.Next() {
+		err := rows.Scan(&id, &text, &author, &title, &timestamp)
+		if err != nil {
+			continue
+		}
+		tags := GetTagsByPostId(id)
+		posts = append(posts, blog.Post{ID: id, Post: text, Author: author, Title: title, Timestamp: timestamp, Tags: tags})
+	}
+	return posts
+}
+
+// Returns the tags for the post with the provided id
+func GetTagsByPostId(id int) []string {
+	stmt, err := db.Prepare("SELECT t.tag FROM tags t, blogtags bt WHERE bt.post = ? AND t.id = bt.tag")
+	if err != nil {
+		log.Fatal(err)
+	}
+
 	rows, err := stmt.Query(id)
 	if err != nil {
 		if err == sql.ErrNoRows {
@@ -79,26 +125,17 @@ func getPostByID(id int) blog.Post {
 		}
 	}
 	defer rows.Close()
-	var str string
-	i := 0
+
+	var tag string
+	tags := make([]string, 0)
 	for rows.Next() {
-		err := rows.Scan(&str)
+		err := rows.Scan(&tag)
 		if err != nil {
 			continue
 		}
-		tags[i] = str
-		i++
+		tags = append(tags, tag)
 	}
-
-	return blog.Post{ID: id, Post: btext, Author: bauthor, Title: btitle, Timestamp: timestamp, Tags: tags[:i]}
-}
-
-/*GetPostsBySearch takes in an string, returns posts that match the search*/
-func GetPostsBySearch(search string) []blog.Post {
-	//TODO: implement this method
-	a := make([]blog.Post, 1)
-	a[0] = getPostByID(1)
-	return a
+	return tags
 }
 
 /*GetPostsByTag gets all the posts with the tag specified*/
