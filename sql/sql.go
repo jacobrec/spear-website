@@ -23,29 +23,37 @@ func OpenDatabase() {
 	}
 }
 
-/*GetPosts takes in an index and a number of posts, returns posts where the id = index as well as 'number' previous posts */
+// Returns the most recent blog posts
+// 'index' specifies the number of most recent posts to skip over.
+// 'number' specifies the maximum number of posts to return.
 func GetPosts(index, number int) []blog.Post {
-	// TODO: currently this function compleatly ignores the index
-	s := fmt.Sprint("SELECT post, author, title, timestamp FROM blogposts ORDER BY id DESC LIMIT ", number)
-	fmt.Println(s)
-	rows, _ := db.Query(s)
+	stmt, err := db.Prepare("SELECT id, post, author, title, timestamp FROM blogposts WHERE id <= ? ORDER BY id DESC LIMIT ?")
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	// Note that 'GetLastId()-index' may produce unexpected results if ids are not in sequential order.
+	rows, err := stmt.Query(GetLastID()-index, number)
+	if err != nil {
+		if err == sql.ErrNoRows {
+		} else {
+			log.Fatal(err)
+		}
+	}
 	defer rows.Close()
-	a := make([]blog.Post, number)
-	var j int
+
+	posts := make([]blog.Post, 0)
 	for rows.Next() {
-		var p blog.Post
-		fmt.Println("Pre scan")
-		err := rows.Scan(&p.Post, &p.Author, &p.Title, &p.Timestamp)
+		var post blog.Post
+		err := rows.Scan(&post.ID, &post.Post, &post.Author, &post.Title, &post.Timestamp)
 		if err != nil {
 			log.Fatal(err)
 			continue
 		}
-		fmt.Println(p)
-
-		a[j] = p
-		j++
+		post.Tags = GetTagsByPostId(post.ID)
+		posts = append(posts, post)
 	}
-	return a
+	return posts
 }
 
 /*GetLastID Gets the ID of the last row*/

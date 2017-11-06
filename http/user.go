@@ -1,14 +1,15 @@
 package http
 
 import (
-	"github.com/gin-gonic/gin"
-	"github.com/jacobrec/spearserver/sql"
 	"net/http"
 	"strconv"
+
+	"github.com/gin-gonic/gin"
+	"github.com/jacobrec/spearserver/sql"
 )
 
 func getPosts(c *gin.Context) {
-	index, _ := strconv.Atoi(c.DefaultQuery("index", "1"))
+	index, _ := strconv.Atoi(c.DefaultQuery("index", "0"))
 	number, _ := strconv.Atoi(c.DefaultQuery("number", "5"))
 
 	c.Header("Content-Type", "application/json")

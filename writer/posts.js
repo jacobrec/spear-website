@@ -3,7 +3,7 @@ var postList = [];
 
 function getPosts() {
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', url + '/blog/posts?index=1&number=100', true);
+    xhr.open('GET', url + '/blog/posts?index=0&number=100', true);
     xhr.setRequestHeader("Content-type", "application/json");
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
