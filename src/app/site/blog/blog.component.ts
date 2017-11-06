@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { PageEvent } from '@angular/material';
 import { BlogPost } from './BlogPost';
-import { BlogService } from './blog.service'
-import { MatPaginatorIntl } from '@angular/material'
+import { BlogService } from './blog.service';
+import { MatPaginatorIntl } from '@angular/material';
 
 @Component({
   selector: 'blog-page',
@@ -10,37 +10,31 @@ import { MatPaginatorIntl } from '@angular/material'
   styleUrls: ['./blog.component.css'],
 })
 export class BlogPageComponent {
-  filler = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   posts = [];
-  subSetPosts = this.posts.slice(0, 5);
-
-  pageLength = this.posts.length;
+  displayedPosts = [];
+  // Initial values for paginator
+  pageLength = 0;
+  pageIndex = 0;
   pageSize = 5;
   pageSizeOptions = [5, 10, 25, 100];
 
-  pageEvent: PageEvent;
-
-  updatePages(apageEvent: PageEvent) {
-    this.pageEvent = apageEvent;
-    this.subSetPosts = this.posts.slice(this.pageSize * this.pageEvent.pageIndex, this.pageSize * (this.pageEvent.pageIndex + 1));
-    this.pageLength = this.posts.length;
-    console.log(this.subSetPosts);
-  }
-  constructor(private blogService: BlogService, private pager: MatPaginatorIntl) { }
-  ngOnInit() {
-    this.blogService.getPosts(1, 12)
-      .subscribe(
-      blog => {
-        console.log(blog)
-        this.posts = blog;
-        this.subSetPosts = this.posts.slice(0, 5);
-
-        this.pageLength = this.posts.length;
-        this.updatePages(this.pageEvent);
-      },
-      error => alert("error"));
-
-
+  constructor(private blogService: BlogService, private pager: MatPaginatorIntl) {
+    this.getPosts(0, 100);
   }
 
+  getPosts(index: number, number: number) {
+    this.blogService.getPosts(index, number)
+    .subscribe((posts) => {
+      this.posts = posts;
+      this.pageLength = this.posts.length;
+      this.displayedPosts = this.posts.slice(this.pageSize * this.pageIndex, this.pageSize * (this.pageIndex + 1));
+    }, (error) => {
+      alert("Error.");
+    });
+  }
+
+  // Called when changing pages or changing the page size
+  updatePages(pageEvent) {
+    this.displayedPosts = this.posts.slice(pageEvent.pageSize * pageEvent.pageIndex, pageEvent.pageSize * (pageEvent.pageIndex + 1));
+  }
 }
