@@ -147,35 +147,36 @@ func GetTagsByPostId(id int) []string {
 
 /*GetPostsByTag gets all the posts with the tag specified*/
 func GetPostsByTag(tag string) []blog.Post {
-	stmt, _ := db.Prepare(`SELECT b.id
-							FROM blogtags bt, blogposts b, tags t
-							WHERE bt.tag = t.id
-							AND (t.tag IN (?))
-							AND b.id = bt.post
-							GROUP BY b.id`)
-	i := 0
-	val, _ := stmt.Query(tag)
-
-	a := make([]blog.Post, 100)
-
-	defer val.Close()
-	for val.Next() {
-
-		var id int
-		err := val.Scan(&id)
-		if err != nil {
-			if err == sql.ErrNoRows {
-				break
-			} else {
-				log.Fatal(err)
-			}
-		}
-
-		a[i] = getPostByID(id)
-		i++
+	stmt, err := db.Prepare(`
+        SELECT b.id
+        FROM blogposts b
+        INNER JOIN blogtags bt ON b.id = bt.post
+        INNER JOIN tags t ON bt.tag = t.id
+        WHERE t.tag = ?
+	`)
+	if err != nil {
+		log.Fatal(err)
 	}
 
-	return a[:i]
+	rows, err := stmt.Query(tag)
+	if err != nil {
+		if err == sql.ErrNoRows {
+		} else {
+			log.Fatal(err)
+		}
+	}
+	defer rows.Close()
+
+	var id int
+	posts := make([]blog.Post, 0)
+	for rows.Next() {
+		err := rows.Scan(&id)
+		if err != nil {
+			continue
+		}
+		posts = append(posts, getPostByID(id))
+	}
+	return posts
 }
 
 /*AddPost adds a new post to the database, as well it sets the timestamp*/
