@@ -27,13 +27,12 @@ func OpenDatabase() {
 // 'index' specifies the number of most recent posts to skip over.
 // 'number' specifies the maximum number of posts to return.
 func GetPosts(index, number int) []blog.Post {
-	stmt, err := db.Prepare("SELECT id, post, author, title, timestamp FROM blogposts WHERE id <= ? ORDER BY id DESC LIMIT ?")
+	stmt, err := db.Prepare("SELECT id, post, author, title, timestamp FROM blogposts ORDER BY id DESC LIMIT ? OFFSET ?")
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	// Note that 'GetLastId()-index' may produce unexpected results if ids are not in sequential order.
-	rows, err := stmt.Query(GetLastID()-index, number)
+	rows, err := stmt.Query(number, index)
 	if err != nil {
 		if err == sql.ErrNoRows {
 		} else {
