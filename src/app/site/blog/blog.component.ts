@@ -12,7 +12,7 @@ import { MatPaginatorIntl } from '@angular/material';
 export class BlogPageComponent {
   posts = [];
   displayedPosts = [];
-  // Initial values for paginator
+  // Initial values for paginator.
   pageLength = 0;
   pageIndex = 0;
   pageSize = 5;
@@ -24,17 +24,22 @@ export class BlogPageComponent {
 
   getPosts(index: number, number: number) {
     this.blogService.getPosts(index, number)
-    .subscribe((posts) => {
-      this.posts = posts;
-      this.pageLength = this.posts.length;
-      this.displayedPosts = this.posts.slice(this.pageSize * this.pageIndex, this.pageSize * (this.pageIndex + 1));
-    }, (error) => {
-      alert("Error.");
-    });
+      .subscribe((posts) => {
+        this.posts = posts;
+        this.pageLength = this.posts.length;
+        this.displayedPosts = this.posts.slice(this.pageSize * this.pageIndex, this.pageSize * (this.pageIndex + 1));
+      }, (error) => {
+        alert("Error.");
+      });
   }
 
-  // Called when changing pages or changing the page size
+  // Called when changing pages or changing the page size.
   updatePages(pageEvent) {
     this.displayedPosts = this.posts.slice(pageEvent.pageSize * pageEvent.pageIndex, pageEvent.pageSize * (pageEvent.pageIndex + 1));
+  }
+
+  // Converts a timestamp to a human readable date string.
+  parseDate(timestamp: number): string {
+    return new Date(timestamp / 1000000).toDateString();
   }
 }
