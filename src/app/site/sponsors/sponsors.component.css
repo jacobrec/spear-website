@@ -23,8 +23,11 @@
     align-items: center;
     height: 100px;
     background-color: white;
-    padding: 10px;
+    padding: 10px 0;
 }
 .img_wrapper img{
     height: 100%;
+}
+img {
+    max-width: 80vw;
 }
