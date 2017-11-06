@@ -12,18 +12,7 @@
   height: calc(100vw * 10 / 16);
 }
 
-#teamphoto1 {
-  width: 700px;
-  height: 400px;
-  background-image: url('../../../assets/team/ts.svg');
-  background-size: cover;
-}
-#teamphoto2 {
-    width: 700px;
-    height: 430px;
-    background-image: url('../../../assets/team/ts2.svg');
-    background-size: cover;
-}
+
 
 .photo_grid{
     display: flex;
