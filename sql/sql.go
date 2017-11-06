@@ -23,9 +23,9 @@ func OpenDatabase() {
 	}
 }
 
-// Returns the most recent blog posts
-// 'index' specifies the number of most recent posts to skip over.
-// 'number' specifies the maximum number of posts to return.
+// GetPosts returns an array of the most recent blog posts.
+// index: specifies the number of recent blog posts to skip.
+// number: upper limit on the number of blog posts to return.
 func GetPosts(index, number int) []blog.Post {
 	stmt, err := db.Prepare("SELECT id, post, author, title, timestamp FROM blogposts ORDER BY id DESC LIMIT ? OFFSET ?")
 	if err != nil {
@@ -82,14 +82,14 @@ func getPostByID(id int) blog.Post {
 	return blog.Post{ID: id, Post: btext, Author: bauthor, Title: btitle, Timestamp: timestamp, Tags: tags}
 }
 
-// Searches the database for posts containing the specified string
+// GetPostsBySearch searches the database for posts containing the specified string.
 func GetPostsBySearch(search string) []blog.Post {
 	stmt, err := db.Prepare("SELECT id, post, author, title, timestamp FROM blogposts WHERE post LIKE ?")
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	// Pads the search term with wildcard operator %
+	// Pads the search term with wildcard operator %.
 	rows, err := stmt.Query("%" + search + "%")
 	if err != nil {
 		if err == sql.ErrNoRows {
@@ -99,13 +99,13 @@ func GetPostsBySearch(search string) []blog.Post {
 	}
 	defer rows.Close()
 
-	// Initializes all the variables required by a blog post
+	// Initializes all the variables required by a blog post.
 	var id int
 	var text, author, title string
 	var timestamp uint64
-	// Initializes posts to an empty array. This causes an empty array to be returned instead of null
+	// Initializes posts to an empty array. This causes an empty array to be returned instead of null.
 	posts := make([]blog.Post, 0)
-	// Adds all the found blog posts to the array
+	// Adds all the found blog posts to the array.
 	for rows.Next() {
 		err := rows.Scan(&id, &text, &author, &title, &timestamp)
 		if err != nil {
@@ -117,7 +117,7 @@ func GetPostsBySearch(search string) []blog.Post {
 	return posts
 }
 
-// Returns the tags for the post with the provided id
+// GetTagsByPostId returns the tags for the post with the provided id.
 func GetTagsByPostId(id int) []string {
 	stmt, err := db.Prepare("SELECT t.tag FROM tags t, blogtags bt WHERE bt.post = ? AND t.id = bt.tag")
 	if err != nil {
