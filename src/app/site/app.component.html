@@ -17,7 +17,7 @@
 
   <mat-toolbar *ngIf="isMobile" color="background" id="navbar">
     <div (click)="shouldShowMain()" id="spearlink"></div>
-    <span class="spacer"></span>
+    <span class="spacer"><h1>SPEAR</h1></span>
 
     <mat-menu #menu="matMenu">
       <button (click)="shouldShowAbout()" [ngClass]="{'currentTab': showAbout}" mat-menu-item routerLink=".">Mission</button>
