@@ -4,13 +4,16 @@
 
 #coverphoto {
   background-image:  url('../../../assets/coverphoto.jpg');
+  clip:rect(0px, 0px, 0px, 50px);
 }
 #roverphoto {
   background-image: url('../../../assets/rover_comp.jpg');
+  clip:rect(100px, 0px, 0px, 50px);
 }
 .mainPagePhoto{
     width: 100vw;
-    height: calc(100vw * 9 / 16);
+    height: calc(100vw * 5 / 16);
+    max-height: 300px;
     background-size: cover;
 }
 
@@ -20,8 +23,10 @@
   text-align: center;
   font-size: 200%;
   padding-top: 20px;
+  padding-bottom:20px;
   text-shadow: 0 2px 0 black;
 }
+
 #titleFitter{
     width: 100%;
     max-height: 25vh;
