@@ -19,9 +19,11 @@
   color: white;
   text-align: center;
   font-size: 200%;
-  padding-top: 20px;
+  padding-top: 40px;
+  padding-bottom:40px;
   text-shadow: 0 2px 0 black;
 }
+
 #titleFitter{
     width: 100%;
     max-height: 25vh;

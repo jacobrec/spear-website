@@ -40,17 +40,24 @@
 
 #notFooter {
   padding-bottom: 60px;
+  background-color: #242927;
 }
 
 footer {
   position: absolute;
-  bottom: 0;
-  height: 60px;
-  width: 100vw;
+  left:0;
+  bottom:10px;
+  height: 150px;
+  width: 100%;
   text-align: center;
   color: white;
+  background-color:#242927;
 }
 .mat-menu-item{
     border: none;
     color: white;
+}
+
+.mat-toolbar {
+  background-color:#242927;
 }

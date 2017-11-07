@@ -10,6 +10,7 @@
 #rover_comp {
   width: 100vw;
   height: calc(100vw * 10 / 16);
+  margin-bottom:2em;
 }
 
 
@@ -17,15 +18,28 @@
 .photo_grid{
     display: flex;
     flex-flow: row wrap;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: left;
+    margin-bottom:4em;
 }
 .person_photo{
     margin: 5px;
+    margin-top:15px;
     display: flex;
     flex-flow: column;
     justify-content: flex-start;
-    align-items: center;
+    align-items:center;
 }
 .person_photo p{
-    margin: 0;
+  margin:0;
+  padding-right:15px;
+  padding-left:15px;
+  padding-top:5px;
+  padding-bottom:0;
+  max-width:100px;
+  text-align: center;
+}
+
+p.person_title {
+  font-style:italic;
 }
