@@ -1,33 +1,36 @@
-#title{
+#title {
     display: flex;
-    flex-flow:column;
+    flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     width: 100%;
 }
-#text{
+
+#text {
     width: 100vw;
 }
 
-#text p{
+#text p {
     width: 80%;
     margin: 10px 10%;
 }
 
-
-.img_wrapper{
+.img_wrapper {
     margin: 40px 0;
     display: flex;
-    flex-flow: column;
+    flex-direction: column;
     width: 100vw;
     align-items: center;
+    justify-content: center;
     height: 100px;
     background-color: white;
     padding: 10px 0;
 }
-.img_wrapper img{
-    height: 100%;
+
+.img_wrapper img {
+    max-height: 100%;
 }
+
 img {
     max-width: 80vw;
 }
