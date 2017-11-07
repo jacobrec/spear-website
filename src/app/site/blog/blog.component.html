@@ -9,7 +9,7 @@
         <mat-card-subtitle>{{post.author}} || {{parseDate(post.timestamp)}}</mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
-        <div mat-line [innerHTML]="post.post">  </div>
+        <div [innerHTML]="post.post"></div>
       </mat-card-content>
     </mat-card>
   </mat-list-item>
