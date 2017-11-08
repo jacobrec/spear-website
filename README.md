@@ -10,6 +10,36 @@ The website for the Space Alberta Exploration Robotics Club.
 - Parallax Scrolling
 - Read through for spelling mistakes
 
+From feedback from social meeting:
+
+IMPORTANT CHANGES
+- Make sure the website works on Safari
+- Crop main page "rover" source photo (the top one) so the height is smaller and the title in the grey bar can be read as soon as the page is opened
+- Team page is missing a team structure diagram
+
+PROPOSED DESIGN CHANGES
+- Social media icons on each blog post w/ links to share on social media
+- Bigger header (increase height) so logo is also bigger. Text can still be vertially aligned with the bottom of the header
+- Social media icons in header and footer (see McGill Robotics page)
+
+SMALL/EASY CHANGES
+- Team page desert photo should be removed
+- "Team Structure" title should have capitalized T and S at the start of words
+- Competition tab title should be white, smaller, centered (match other titles)
+- Body text light grey, for all big chunks of text
+- Team tab: The team structure diagrams should be after the team member images
+
+ISSUE FIXES
+- Footer is missing instagram link
+- FIX: On phone, when viewing horizontally (not mobile version), blog post titles are smaller than blog post text
+- Mission page: Change top line "rover" to "robotics"
+
+FUTURE DESIGN IDEAS
+- Search feature for blog posts?
+- Animated changing pictures (like a slide show) on home page?
+- Blog posts listed in grid w/ pictures and titles? Each picture links to a page w/ the individual blog post?
+- Blog commment system?
+
 ## Bug List :(
 
 
