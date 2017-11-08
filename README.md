@@ -23,11 +23,8 @@ PROPOSED DESIGN CHANGES
 - Social media icons in header and footer (see McGill Robotics page)
 
 SMALL/EASY CHANGES
-- Team page desert photo should be removed
-- "Team Structure" title should have capitalized T and S at the start of words
 - Competition tab title should be white, smaller, centered (match other titles)
 - Body text light grey, for all big chunks of text
-- Team tab: The team structure diagrams should be after the team member images
 
 ISSUE FIXES
 - Footer is missing instagram link
