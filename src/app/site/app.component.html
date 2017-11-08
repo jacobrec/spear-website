@@ -1,9 +1,8 @@
 <div (window:resize)="onResize($event)"></div>
 <div id="notFooter">
-  <mat-toolbar *ngIf="isDesktop" color="background" id="navbar">
-
-    <div (click)="shouldShowMain()" id="spearlink">
-    </div>
+  <!-- Desktop -->
+  <mat-toolbar *ngIf="!isMobile" color="background" id="navbar">
+    <div (click)="shouldShowMain()" id="spearlink"></div>
     <span class="spacer"></span>
     <ul id="navlist">
       <li><button (click)="shouldShowAbout()" [ngClass]="{'currentTab': showAbout}" mat-button routerLink=".">Mission</button></li>
@@ -14,7 +13,7 @@
       <li><button (click)="shouldShowBlog()" [ngClass]="{'currentTab': showBlog}" mat-button routerLink=".">Blog</button></li>
     </ul>
   </mat-toolbar>
-
+  <!-- Mobile -->
   <mat-toolbar *ngIf="isMobile" color="background" id="navbar">
     <div (click)="shouldShowMain()" id="spearlink"></div>
     <span class="spacer"><h1>SPEAR</h1></span>
