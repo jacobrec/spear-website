@@ -2,16 +2,6 @@
 
 The website for the Space Alberta Exploration Robotics Club.
 
-## TODO
-- Add all the images throughout the site
-- Finish team page
-- Ensure content matchs team drive
-- Implement styling as shown in team drive
-- Parallax Scrolling
-- Read through for spelling mistakes
-
-## Bug List :(
-
 
 ## Setup
 ### Linux

@@ -19,22 +19,16 @@ export class AppComponent {
   showContact = false;
 
   isMobile = false;
-  isDesktop = false;
-
-  mobHeight: any;
-  mobWidth: any;
 
   constructor() {
     this.resize();
   }
+
   resize() {
-    this.mobHeight = (window.screen.height);
-    this.mobWidth = (window.screen.width);
-    if (this.mobWidth < this.mobHeight) {
-      this.isDesktop = false;
+    // Consider window widths less than 768px to be mobile.
+    if (window.innerWidth < 768) {
       this.isMobile = true;
     } else {
-      this.isDesktop = true;
       this.isMobile = false;
     }
   }
