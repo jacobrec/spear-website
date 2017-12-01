@@ -5,8 +5,6 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './site/app.component';
 
-import { Ng2FittextModule } from "ng2-fittext/ng2fittext";
-
 // Material
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCheckboxModule } from '@angular/material';
@@ -51,7 +49,6 @@ import { BlogService } from './site/blog/blog.service';
     MatCardModule,
     MatPaginatorModule,
     MatGridListModule,
-    Ng2FittextModule,
     MatMenuModule,
     MatIconModule
   ],
