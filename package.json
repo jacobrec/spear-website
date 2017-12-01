@@ -25,8 +25,6 @@
     "@angular/platform-browser-dynamic": "^4.4.4",
     "@angular/router": "^4.4.4",
     "core-js": "^2.4.1",
-    "ng-fittext": "^4.2.3",
-    "ng2-fittext": "^1.0.24",
     "rxjs": "^5.1.0",
     "zone.js": "^0.8.18"
   },
