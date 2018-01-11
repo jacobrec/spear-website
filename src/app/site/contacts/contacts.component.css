@@ -3,7 +3,8 @@
     display: flex;
     flex-flow: column;
     align-items: center;
-    width: 100%;
+    width: 80%;
+    padding: 10%;
 }
 #title{
 
