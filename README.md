@@ -14,7 +14,6 @@ cd spear-website
 npm install
 npm install --save @angular/material @angular/cdk
 npm install --save @angular/animations
-npm install --save ng2-fittext
 ```
 This downloads the node packages we're using
 ### Windows
@@ -30,8 +29,6 @@ This downloads the node packages we're using
 npm install
 npm install --save @angular/material @angular/cdk
 npm install --save @angular/animations
-npm install --save ng2-fittext
-
 ```
 ### Mac
 no instructions yet
