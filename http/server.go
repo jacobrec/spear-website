@@ -18,9 +18,11 @@ func Begin(port string) {
 	}
 
 	writer := router.Group("/author")
+	writer.Use(authRequired())
 	{
 		writer.Static("/", "writer/")
 	}
+
 
 	router.Run(port)
 }
