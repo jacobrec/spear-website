@@ -47,3 +47,13 @@
 p.person_title {
   font-style:italic;
 }
+
+.club_logo{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+}
+a{
+    color: white;
+}

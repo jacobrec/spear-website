@@ -13,9 +13,6 @@
 #coverphoto {
   background-image:  url('../../../assets/coverphoto.jpg');
 }
-#roverphoto {
-  background-image: url('../../../assets/rover_comp.jpg');
-}
 .mainPagePhoto{
     width: 100vw;
     height: calc(100vw * 9 / 16);

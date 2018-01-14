@@ -5,7 +5,7 @@
 :host ::ng-deep img {
     display: flex;
     margin: auto;
-    max-width: 80vw;
+    max-width: 50vw;
 }
 
 .postTitle{
