@@ -22,6 +22,8 @@ func authRequired() func(c *gin.Context) {
 
 			decoded := strings.Split(string(bytes), ":")
 
+			// TODO: probably should remove the username and password from the code and put it in a seperate file.
+			// it seems like a security issue to have them here when the source is publicly viewable
 			if "spear_admin" == decoded[0] && "admin_spear" == decoded[1] {
 				c.Next()
 				return
@@ -43,6 +45,11 @@ func deletePost(c *gin.Context) {
 func putPost(c *gin.Context) {
 	var post blog.Post
 	c.BindJSON(&post)
-	sql.AddPost(post)
+	fmt.Println(post.ID)
+	if post.ID == -1 {
+		sql.AddPost(post)
+	}else{
+		sql.EditPost(post)
+	}
 	fmt.Println(post)
 }

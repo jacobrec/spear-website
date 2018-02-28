@@ -148,11 +148,11 @@ func GetTagsByPostId(id int) []string {
 /*GetPostsByTag gets all the posts with the tag specified*/
 func GetPostsByTag(tag string) []blog.Post {
 	stmt, err := db.Prepare(`
-        SELECT b.id
-        FROM blogposts b
-        INNER JOIN blogtags bt ON b.id = bt.post
-        INNER JOIN tags t ON bt.tag = t.id
-        WHERE t.tag = ?
+		SELECT b.id
+		FROM blogposts b
+		INNER JOIN blogtags bt ON b.id = bt.post
+		INNER JOIN tags t ON bt.tag = t.id
+		WHERE t.tag = ?
 	`)
 	if err != nil {
 		log.Fatal(err)
@@ -177,6 +177,24 @@ func GetPostsByTag(tag string) []blog.Post {
 		posts = append(posts, getPostByID(id))
 	}
 	return posts
+}
+
+/*EditPost edits an exsisting post in the database*/
+func EditPost(post blog.Post) {
+	tx, _ := db.Begin()
+	stmt, err := tx.Prepare(fmt.Sprintf(`	UPDATE blogposts
+								SET post = '%s', author= '%s', title = '%s'
+								WHERE id = %d;`, post.Post, post.Author, post.Title, post.ID))
+	defer stmt.Close()
+	if err != nil {
+		log.Fatal(err)
+	}
+	_, err = stmt.Exec()
+	if err != nil {
+		log.Fatal(err)
+	}
+	tx.Commit()
+	fmt.Print("Edited post")
 }
 
 /*AddPost adds a new post to the database, as well it sets the timestamp*/
