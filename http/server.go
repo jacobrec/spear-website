@@ -23,6 +23,5 @@ func Begin(port string) {
 		writer.Static("/", "writer/")
 	}
 
-
 	router.Run(port)
 }
