@@ -45,20 +45,20 @@ function showPost(post) {
     timestamp.appendChild(document.createTextNode(convertToDate(post.timestamp)));
 
     // Make Buttons
-    var view = document.createElement("button");
+    var edit = document.createElement("button");
     var del = document.createElement("button");
-    view.classList.add("blogPostPreviewButView");
+    edit.classList.add("blogPostPreviewButEdit");
     del.classList.add("blogPostPreviewButDel");
-    view.appendChild(document.createTextNode("View"));
+    edit.appendChild(document.createTextNode("Edit"));
     del.appendChild(document.createTextNode("Delete"));
     let i = postList.length;
     del.onclick = function() {
         deletePost(i);
     };
-    view.onclick = function() {
-        viewPost(i);
+    edit.onclick = function() {
+        editPost(i);
     };
-    buttonBar.appendChild(view);
+    buttonBar.appendChild(edit);
     buttonBar.appendChild(del);
     // Done Making Buttons
 
@@ -73,11 +73,12 @@ function showPost(post) {
     });
 }
 
-function viewPost(index) {
+function editPost(index) {
     let item = postList[index];
-    let post = item.jsonPost;
-    console.log(post);
-    alert(post.post);
+    localStorage.setItem("editpost", JSON.stringify(item.jsonPost))
+    console.log(JSON.stringify(item.jsonPost));
+    console.log(String(item.jsonPost.post));
+    document.location.href='index.html'
 }
 
 function deletePost(index) {
