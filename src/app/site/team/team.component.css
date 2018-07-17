@@ -29,6 +29,7 @@
     flex-flow: column;
     justify-content: flex-start;
     align-items:center;
+		float: left;
 }
 .person_photo p{
   margin:0;
@@ -44,8 +45,12 @@
     max-height: 160px;
 }
 
-p.person_title {
+p.person_title, p.person_department, p.person_bio {
   font-style:italic;
+}
+
+p.person_name {
+	font-weight:bold;
 }
 
 .club_logo{
