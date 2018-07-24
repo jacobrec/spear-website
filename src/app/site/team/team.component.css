@@ -39,6 +39,7 @@
   padding-bottom:0;
   max-width:100px;
   text-align: center;
+	overflow:auto;
 }
 .person_photo img{
     max-width: 100px;
