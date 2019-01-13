@@ -1,7 +1,10 @@
 ## API
     posts.GET("/search/tag/:id", getByTag)
     posts.GET("/search/string/:id", getByString)
-    posts.GET("/posts", getPosts) // this supports the query string index, and number, which are by default 0 and 5 respectivly
+    posts.GET("/posts", getPosts) // this supports the query string index, and number
+    //     index: specifies the number of recent blog posts to skip. Default 0
+    //     number: upper limit on the number of blog posts to return. Default 5
+    
     posts.PUT("/", putPost)
     posts.DELETE("/:id", deletePost)
     
