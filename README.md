@@ -1,4 +1,22 @@
-## setup
+## API
+    posts.GET("/search/tag/:id", getByTag)
+    posts.GET("/search/string/:id", getByString)
+    posts.GET("/posts", getPosts) // this supports the query string index, and number, which are by default 0 and 5 respectivly
+    posts.PUT("/", putPost)
+    posts.DELETE("/:id", deletePost)
+    
+A post is a json object with the following structure
+    
+    type Post struct {
+        ID        int      `json:"id"`
+        Title     string   `json:"title"`
+        Author    string   `json:"author"`
+        Post      string   `json:"post"`
+        Timestamp uint64   `json:"timestamp"`
+        Tags      []string `json:"tags"`
+    }
+    
+## Setup
 1. Install go
 2. Get files with `go get github.com/jacobrec/spearserver`
 3. Install mysql server
@@ -8,7 +26,7 @@
 2. run with -setup from the src/github.com/jacobrec/spearserver directory
 3. run normally from the src/github.com/jacobrec/spearserver directory to start webserver 
 
-### passwords file
+### Passwords file
 should have the name .passwords
 file should be 3 lines and read like this. the username, password, and database refer to the sql database and user you just created
 ```
@@ -16,3 +34,4 @@ username
 password
 database
 ```
+This file needs to be placed in the directory of which you run the program from
