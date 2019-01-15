@@ -18,6 +18,16 @@ func getPosts(c *gin.Context) {
 
 }
 
+func getPost(c *gin.Context) {
+	id, _ := strconv.Atoi(c.Params.ByName("id"))
+
+
+	c.Header("Content-Type", "application/json")
+	c.Header("Access-Control-Allow-Origin", "*")
+	c.JSON(http.StatusOK, sql.GetPost(id))
+
+}
+
 func getByString(c *gin.Context) {
 	searchStr := c.Params.ByName("id")
 
