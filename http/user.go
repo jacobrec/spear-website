@@ -24,7 +24,7 @@ func getPost(c *gin.Context) {
 
 	c.Header("Content-Type", "application/json")
 	c.Header("Access-Control-Allow-Origin", "*")
-	c.JSON(http.StatusOK, sql.getPostByID(id))
+	c.JSON(http.StatusOK, sql.GetPostByID(id))
 
 }
 

@@ -62,7 +62,8 @@ func GetLastID() int {
 	return row
 }
 
-func getPostByID(id int) blog.Post {
+/*GetLastID Gets the post with the specified ID*/
+func GetPostByID(id int) blog.Post {
 	stmt, err := db.Prepare("SELECT post, author, title, timestamp FROM blogposts WHERE id = ?")
 	if err != nil {
 		log.Fatal(err)
@@ -174,7 +175,7 @@ func GetPostsByTag(tag string) []blog.Post {
 		if err != nil {
 			continue
 		}
-		posts = append(posts, getPostByID(id))
+		posts = append(posts, GetPostByID(id))
 	}
 	return posts
 }
