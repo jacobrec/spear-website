@@ -9,7 +9,7 @@ import (
 )
 
 func getPosts(c *gin.Context) {
-	index, _ := strconv.Atoi(c.DefaultQuery("index", "0"))
+	index, _ := strconv.Atoi(c.DefaultQuery("offset", "0"))
 	number, _ := strconv.Atoi(c.DefaultQuery("number", "5"))
 
 	c.Header("Content-Type", "application/json")

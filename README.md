@@ -1,10 +1,18 @@
 ## API
+    all of these are prepended by blog
     posts.GET("/post/:id", getPost) // this gets the post by the actual ID
     posts.GET("/search/tag/:id", getByTag)
     posts.GET("/search/string/:id", getByString)
-    posts.GET("/posts", getPosts) // this supports the query string index, and number
-    //     index: specifies the number of recent blog posts to skip. Default 0
+    posts.GET("/posts", getPosts) // this supports the query string offset, and number
+    //     offset: specifies the number of recent blog posts to skip. Default 0
     //     number: upper limit on the number of blog posts to return. Default 5
+    // Eg) to get the most recent 5 posts
+    // GET http://this-blog-server.com:8049/blog/posts
+    // to get the next 10 most recent posts
+    // GET http://this-blog-server.com:8049/blog/posts?offset=5&number=10
+
+    posts.GET("/number, getPostCount) // number of posts
+
 
     posts.PUT("/", putPost)
     posts.DELETE("/:id", deletePost)
