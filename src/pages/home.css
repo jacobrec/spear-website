@@ -1,0 +1,17 @@
+.spear-home-main-image{
+    width: 100vw;
+}
+
+.img-container{
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.centered {
+    position: absolute;
+    top: 12%;
+    width: 100%;
+    background-color: #00000088;
+    font-size: 3em;
+}

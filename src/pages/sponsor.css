@@ -1,0 +1,39 @@
+.reverse{
+  flex-direction: row-reverse!important;
+  display: flex;
+}
+.sponsor-intro{
+  width: 100%;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.sponsor-intro p{
+  width: 50%;
+}
+.sponsor-image-holder{
+  width: 50vw;
+  text-align: right;
+  background-color: white;
+}
+.sponsor-image-holder img{
+  height: 200px;
+  margin: 10px;
+}
+.sponsor-text-holder{
+  width: 50vw;
+}
+.sponsor-text-holder p{
+  width: 50%;
+  margin: 10px;
+}
+.reverse .sponsor-image-holder{
+  text-align: left;
+}
+.reverse .sponsor-text-holder{
+  text-align: right;
+}
+.reverse .sponsor-text-holder p{
+  float: right;
+}

@@ -1,0 +1,46 @@
+.hor.reversed{
+    flex-direction: row-reverse;
+    text-align: right;
+}
+.spear-person{
+    width: 50vw;
+    justify-content: center;
+    align-items: space-between;
+}
+.spear-person-avatar{
+    background-color: var(--spear-green);
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1vw;
+}
+.spear-person-avatar img{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+.spear-person-text{
+    margin: 1vw;
+}
+.spear-person-name{
+    font-size: 2em;
+    text-transform: uppercase;
+    margin: 0;
+}
+.spear-person-title{
+    font-size: 1.1em;
+    margin: 0;
+}
+.spear-person-quote{
+    font-size: 1.1em;
+    font-style: italic;
+    margin: 0;
+}
+.spear-person-program{
+    font-size: 1.1em;
+    margin: 10px 0;
+}
