@@ -18,6 +18,12 @@ func getPosts(c *gin.Context) {
 
 }
 
+func getPostCount(c *gin.Context) {
+	c.Header("Content-Type", "application/json")
+	c.Header("Access-Control-Allow-Origin", "*")
+	c.JSON(http.StatusOK, sql.GetPostCount())
+}
+
 func getPost(c *gin.Context) {
 	id, _ := strconv.Atoi(c.Params.ByName("id"))
 

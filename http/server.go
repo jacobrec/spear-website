@@ -10,12 +10,16 @@ func Begin(port string) {
 	router := gin.Default()
 	posts := router.Group("/blog")
 	{
+		posts.GET("/posts", getPosts)
+		posts.GET("/post/:id", getPost)
+
 		posts.GET("/search/tag/:id", getByTag)
 		posts.GET("/search/string/:id", getByString)
-		posts.GET("/posts", getPosts)
+
+        posts.GET("/number", getPostCount)
+
 		posts.PUT("/", putPost)
 		posts.DELETE("/:id", deletePost)
-		posts.GET("/post/:id", getPost)
 	}
 
 	writer := router.Group("/author")

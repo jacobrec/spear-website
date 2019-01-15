@@ -23,6 +23,12 @@ func OpenDatabase() {
 	}
 }
 
+func GetPostCount() int {
+	var row int
+	db.QueryRow("SELECT COUNT(*) FROM blogposts").Scan(&row)
+	return row
+}
+
 // GetPosts returns an array of the most recent blog posts.
 // index: specifies the number of recent blog posts to skip.
 // number: upper limit on the number of blog posts to return.
