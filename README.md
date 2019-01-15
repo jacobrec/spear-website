@@ -1,4 +1,5 @@
 ## API
+    posts.GET("/:id", getPost) // this gets the post by the actual ID
     posts.GET("/search/tag/:id", getByTag)
     posts.GET("/search/string/:id", getByString)
     posts.GET("/posts", getPosts) // this supports the query string index, and number
