@@ -1,5 +1,6 @@
 var editor;
 var url = "http://localhost:8049"
+//var url = "http://spaceualberta.ca:8049"
 var timestamp = 0; // if it is zero, the server will create the post and add the time stamp, else it will edit it
 var id = -1;
 

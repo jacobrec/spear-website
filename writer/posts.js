@@ -1,4 +1,4 @@
-var url = "http://localhost:8049"
+var url = "http://spaceualberta.ca:8049"
 var postList = [];
 
 function getPosts() {
