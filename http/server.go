@@ -15,6 +15,7 @@ func Begin(port string) {
 		posts.GET("/posts", getPosts)
 		posts.PUT("/", putPost)
 		posts.DELETE("/:id", deletePost)
+		posts.GET("/:id", getPost)
 	}
 
 	writer := router.Group("/author")
