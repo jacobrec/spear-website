@@ -15,9 +15,9 @@ export default class SpearHomePage extends Component {
           <h2>Our Mission</h2>
           <div>
             Our student project group, Space Exploration Alberta Robotics, aims to
-            promote space ex- ploration technology and robotics through educational
+            promote space exploration technology and robotics through educational
             outreach and participating in design competitions. SPEAR is motivated
-            to be a positive force in our community. Beyond our edu- cational
+            to be a positive force in our community. Beyond our educational
             outreach we also support other groups at the university with positive
             goals. We are proud to help promote groups such as, Women in
             Engineering, Science, and Technology and Diversity in Engineering.
