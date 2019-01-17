@@ -17,7 +17,7 @@ export default class SpearHeader extends Component {
                     <Link to="/"> <img alt="the logo of SPEAR" className="spear-logo" src={require('../img/logo.png')} /></Link>
                     <div className="ver">
                         <ul className="hor spear-nav-list cent pad-x"> {listItems} </ul>
-                        <img alt="pretty abstract mountains for decoration" className="spear-mountains" src={require('../img/mountains.svg')} />
+                        <img alt="pretty abstract mountains for decoration" className="spear-mountains" src={require('../img/mtshdw.svg')} />
                     </div>
                 </div>
             </header>

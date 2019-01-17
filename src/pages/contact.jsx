@@ -129,7 +129,7 @@ export default class SpearContactPage extends Component {
 
     return (
       <div className="ver">
-        <SpearTitle title="Contact" img={require('../img/logos/supporters.svg')}/>
+        <SpearTitle title="Contact" img={require('../img/logos/contact.svg')}/>
         { view }
       </div>
     )

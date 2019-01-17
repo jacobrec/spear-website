@@ -52,7 +52,7 @@ export default class SpearBlogPage extends Component {
     })
     return (
       <div className="ver">
-        <SpearTitle title="Blog" img={require('../img/logos/supporters.svg')}/>
+        <SpearTitle title="Blog" img={require('../img/logos/blog.svg')}/>
         {posts}
       </div>
     )
