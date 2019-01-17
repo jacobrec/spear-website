@@ -14,23 +14,29 @@
 }
 .sponsor-image-holder{
   width: 50vw;
-  text-align: right;
-  background-color: white;
-}
-.sponsor-image-holder img{
   height: 200px;
-  margin: 10px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
 }
+
+.sponsor-image-holder img{
+  /* Maintain aspect ratio */
+  max-height: 100%;
+  max-width: 100%;
+}
+
 .sponsor-text-holder{
   width: 50vw;
+  display: flex;
+  align-items: center;
 }
 .sponsor-text-holder p{
-  width: 50%;
+  width: 100%;
   margin: 10px;
 }
-.reverse .sponsor-image-holder{
-  text-align: left;
-}
+.reverse .sponsor-image-holder{ }
 .reverse .sponsor-text-holder{
   text-align: right;
 }
