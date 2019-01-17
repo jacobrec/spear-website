@@ -31,6 +31,7 @@ class App extends Component {
 
           <Switch>
             <Route exact path="/" component={SpearHomePage}/>
+            <Route exact path="/info" component={SpearInfoPage}/>
             <Route exact path="/blog" component={SpearBlogPage}/>
             <Route exact path="/blog/:id" component={SpearBlogDetailPage}/>
             <Route exact path="/people" component={SpearPeoplePage}/>

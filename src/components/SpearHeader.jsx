@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default class SpearHeader extends Component {
     render() {
         const tabs = [
-            //{display: "Info", link: "info"},
+            {display: "Info", link: "info"},
             {display: "People", link: "people"},
             {display: "Sponsors", link: "sponsors"},
             {display: "Blog", link: "blog"},
