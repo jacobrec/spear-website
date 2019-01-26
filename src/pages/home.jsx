@@ -11,7 +11,7 @@ export default class SpearHomePage extends Component {
           <div className="centered">Space Exploration Alberta Robotics</div>
         </div>
 
-        <div className="ver cent pad">
+        <div className="ver cent pad mission">
           <h2>Our Mission</h2>
           <div>
             Our student project group, Space Exploration Alberta Robotics, aims to
