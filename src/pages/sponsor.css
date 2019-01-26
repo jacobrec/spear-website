@@ -1,45 +1,47 @@
 .reverse{
-  flex-direction: row-reverse!important;
-  display: flex;
+    display: flex;
+    flex-direction: row-reverse!important;
 }
 .sponsor-intro{
-  width: 100%;
-  display: flex;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
+    width: 100%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 .sponsor-intro p{
-  width: 50%;
+    width: 50%;
 }
 .sponsor-image-holder{
-  width: 50vw;
-  height: 200px;
-  background-color: white;
-  display: flex;
-  align-items: center;
-  flex-direction: row-reverse;
+    width: 50vw;
+    height: 200px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
 }
 
 .sponsor-image-holder img{
-  /* Maintain aspect ratio */
-  max-height: 100%;
-  max-width: 100%;
+    /* Maintain aspect ratio */
+    max-height: 100%;
+    max-width: 100%;
 }
 
 .sponsor-text-holder{
-  width: 50vw;
-  display: flex;
-  align-items: center;
+    width: 50vw;
+    display: flex;
+    align-items: center;
 }
 .sponsor-text-holder p{
-  width: 100%;
-  margin: 10px;
+    width: 100%;
+    margin: 10px;
 }
-.reverse .sponsor-image-holder{ }
+.reverse .sponsor-image-holder{
+    flex-direction: row;
+}
 .reverse .sponsor-text-holder{
-  text-align: right;
+    text-align: right;
 }
 .reverse .sponsor-text-holder p{
-  float: right;
+    float: right;
 }
