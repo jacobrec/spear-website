@@ -97,9 +97,14 @@ ul{
 }
 .spear-nav-list li{
     flex-grow: 1;
-    padding: 1em;
     height: 100%;
     color: white;
+}
+.spear-nav-list li a{
+    height: 100%;
+    width: 100%;
+    padding: 1em;
+    text-align: center;
 }
 .spear-nav-list a {
     text-decoration: none;
