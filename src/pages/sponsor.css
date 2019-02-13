@@ -11,10 +11,13 @@
 }
 .sponsor-intro p{
     width: 50%;
+    max-width: 50vw;
+    font-size: 1.75em;
 }
 .sponsor-image-holder{
+    padding: 30px;
     width: 50vw;
-    height: 200px;
+    height: 170px;
     background-color: white;
     display: flex;
     align-items: center;
@@ -27,13 +30,19 @@
     max-width: 100%;
 }
 
+.sponsor {
+    margin-bottom: 50px;
+}
+
 .sponsor-text-holder{
     width: 50vw;
     display: flex;
     align-items: center;
+    justify-content: flex-start;
 }
 .sponsor-text-holder p{
     width: 100%;
+    max-width: 25vw;
     margin: 10px;
 }
 .reverse .sponsor-image-holder{
@@ -41,6 +50,7 @@
 }
 .reverse .sponsor-text-holder{
     text-align: right;
+    justify-content: flex-end;
 }
 .reverse .sponsor-text-holder p{
     float: right;
