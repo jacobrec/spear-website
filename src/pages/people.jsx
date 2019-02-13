@@ -68,9 +68,9 @@ const people = [
 
 function SpearPerson(props){
   return (
-    <div className={`card spread hor spear-person ${!props.isLeft && "reversed"}`}>
+    <div className={`spread hor spear-person ${!props.isLeft && "reversed"}`}>
       <div>
-        <div className="spear-person-avatar">
+        <div className="spear-person-avatar circle-shadow">
           <img alt={props.name + ", " + props.title} src={require('../img/people/' + props.imgPath)}/>
         </div>
       </div>
@@ -79,6 +79,7 @@ function SpearPerson(props){
         <p className="spear-person-title">{props.title}</p>
         <p className="spear-person-program">{"Program: " + props.program}</p>
         <p className="spear-person-quote">{"\"" + props.quote + "\""}</p>
+        <hr/>
       </div>
     </div>
   )

@@ -71,6 +71,16 @@ a{
 .card:hover{
     box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
 }
+.circle-shadow {
+    border-radius: 100%;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    border: 0;
+}
+
+hr {
+    width: 100%;
+    border: 1px solid #202020;
+}
 ul{
     list-style: none;
     padding: 0;
@@ -110,22 +120,20 @@ ul{
     text-decoration: none;
 }
 .spear-logo {
-    border-radius: 100%;
-    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     height: 10vw;
     width: 10vw;
+    margin: 2.5vw;
+    margin-left: 12.5vw;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    border: 0;
-    margin: 2.5vw;
-    margin-left: 12.5vw;
 }
 /* Styling for Header End */
 
 /* Styling for Footer Begin */
 .spear-footer {
     background-color: var(--spear-green-dark);
+    margin-top: 20px;
 }
 
 .spear-footer a{

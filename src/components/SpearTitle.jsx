@@ -13,6 +13,7 @@ const styleDivOuter = {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-around',
+  marginBottom: '20px'
 };
 
 const styleHeader = {
