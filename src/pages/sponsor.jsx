@@ -5,7 +5,7 @@ import './sponsor.css'
 
 function Sponsor(props){
   return (
-    <div className={"sponsor " + "hor" + (props.isLeft ? "" : " reverse")}>
+    <div className={"sponsor hor" + (props.isLeft ? "" : " reverse")}>
       <div className="sponsor-image-holder">
         {console.log(require('../img/sponsors/' + props.imgPath))}
         <img alt={props.name + " logo"} src={require('../img/sponsors/' + props.imgPath)}/>
@@ -37,7 +37,7 @@ export default class SpearSponsorPage extends Component {
 
         <div>
           { sponsors.map((s, i) => (
-              <Sponsor name={s.img.split('.')[0]} isLeft={i%2==0}
+              <Sponsor name={s.img.split('.')[0]} isLeft={i%2===0}
                        imgPath={s.img} description={s.description} />
           )) }
         </div>

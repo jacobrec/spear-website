@@ -57,6 +57,20 @@ const people = [
     imgPath: "navras.jpg"
   },
   {
+    name:"Kyle Hennig",
+    title:"Software Team Lead",
+    program:"Computer Engineering, Software Coop",
+    quote:"I joined SPEAR because Jacob told me to",
+    imgPath:"kyle.jpg"
+  },
+  {
+    name:"Ryan Shukla",
+    title:"Software Team",
+    program:"Computer Engineering, Software Coop",
+    quote:"I joined SPEAR because I wanted to learn about robotics while working on a project I could be proud of. I stayed for the pals I made!",
+    imgPath:"ryan.jpg"
+  },
+  {
     name:"Jacob Reckhard",
     title:"Software Team",
     program:"Computer Engineering, Software Coop",
