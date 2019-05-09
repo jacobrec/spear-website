@@ -1,47 +1,37 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component, Fragment } from "react"
 import SpearTitle from "../components/SpearTitle"
-import './contact.css'
+import "./contact.css"
 
-function IntroButton(props){
-  console.log(props)
-  return (
-    <button className="card contact-card" onClick={() => {props.onClick()}}>
-      {props.text}
-    </button>
-  )
-}
-function IntroView(props){
-  console.log(props)
-  return (
-    <div className="pad">
-      <div className="hor drift">
-        <IntroButton text="I would like to join!" onClick={() => props.nav(1)} />
-        <IntroButton text="I would just like to contact" onClick={() => props.nav(2)}/>
-      </div>
-    </div>
-  )
-}
-function handleForm(){
-  var data = {
+const serverLoc = "http://spaceualberta.ca:8888"
+//const serverLoc = "http://localhost:5000/join"
+
+function handleForm(e){
+  e.preventDefault()
+  let data = {
     teamid: document.forms[0].team.value,
     name: document.forms[0].name.value,
     email: document.forms[0].email.value,
     msg: document.forms[0].message.value,
-  };
-  sendData(data);
-  return false;
+  }
+  sendData(data)
+  return false
 }
+
 function sendData(data){
   var xhr = new XMLHttpRequest();
-  xhr.open("POST", "http://rac.reckhard.win:8888", true);
+  xhr.open("POST", serverLoc, true);
   xhr.setRequestHeader("Content-Type", "application/json");
+  xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
+  xhr.withCredentials = true;
   xhr.onreadystatechange = function () {
+    console.log("returned: ", xhr)
     if (xhr.readyState === 4 && xhr.status === 200) {
       alert("Thanks, got your message");
-      window.location.href = 'http://join.spaceualberta.ca';
+      // window.location.href = "http://spaceualberta.ca";
     }
   };
   xhr.send(JSON.stringify(data));
+  console.log("Sent: ", data)
 }
 
 
@@ -56,7 +46,7 @@ function JoinView(props){
   return (
     <div className="ver cent">
       <p> Hey, thanks for your interest. Please fill out this form, and we will get back to you! </p>
-      <form className="wide ver cent pad-x" method="post" action="spaceualberta.ca:8888/join" onSubmit={handleForm}>
+      <form className="wide ver cent pad-x" method="post" action={serverLoc} onSubmit={(e) => handleForm(e)}>
         <div className="fields wide">
           <div className="hor cent">
             <div className="col-33">
@@ -91,14 +81,26 @@ function JoinView(props){
   )
 }
 
-function ContactView(props){
+function IntroView (props) {
+  const tWidth = 350;
+  const tHeight = 500;
   return (
-    <div className="ver pad card">
-      <p> The best way to contact us is via our email. <a
-          href="mailto:spearua@ualberta.ca">spearua@ualberta.ca</a> However, it
-        may be faster to send us a message on our <a href="http://facebook.com/SpaceUAlberta">facebook</a>.
-    </p>
-  </div>
+    <div style={{width: "60vw", margin: "0 20vw"}}>
+      <div style={{display: "flex"}}>
+        <div style={{justifyContent: "center", display: "flex", width: "50%", flexDirection: "column"}}>
+          <p className="old-person-font">We are always excited about new members! If you are interested in joining SPEAR, click the icon below!</p>
+          <button onClick={() => props.nav(1)}>
+            Join
+          </button>
+        </div>
+        <div style={{justifyContent: "center", display: "flex", width: "50%"}}>
+          <a className="twitter-timeline" data-width={tWidth} data-height={tHeight} data-theme="dark" href="https://twitter.com/spaceualberta?ref_src=twsrc%5Etfw">Tweets by spaceualberta</a>
+        </div>
+      </div>
+      <p className="old-person-font">
+        We are also active on social media! Find us @spaceualberta on Twitter and Instagram, and on Facebook at facebook.com/spaceualberta. You can also send us an email at spearua@ualberta.ca
+      </p>
+    </div>
   )
 }
 
@@ -109,6 +111,13 @@ export default class SpearContactPage extends Component {
       view: 0,
     }
   }
+
+   componentDidMount () {
+     const script = document.createElement("script");
+     script.src = "https://platform.twitter.com/widgets.js";
+     script.async = true;
+     document.body.appendChild(script);
+    }
 
   gotoView(view){
     this.setState({ view: view })
@@ -123,13 +132,10 @@ export default class SpearContactPage extends Component {
 
     if(this.state.view === 1){
       view = <JoinView nav={(v) => this.gotoView(v)}/>
-    }else if(this.state.view === 2){
-      view = <ContactView nav={(v) => this.gotoView(v)}/>
     }
-
     return (
       <div className="ver">
-        <SpearTitle title="Contact" img={require('../img/logos/contact.svg')}/>
+        <SpearTitle title="Contact" img={require("../img/logos/contact.svg")}/>
         { view }
       </div>
     )

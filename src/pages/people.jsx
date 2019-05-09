@@ -70,13 +70,7 @@ const people = [
     quote:"I joined SPEAR because I wanted to learn about robotics while working on a project I could be proud of. I stayed for the pals I made!",
     imgPath:"ryan.jpg"
   },
-  {
-    name:"Jacob Reckhard",
-    title:"Software Team",
-    program:"Computer Engineering, Software Coop",
-    quote:"I joined SPEAR because I thought it would be a fun challenge. I stayed because I was right.",
-    imgPath:"jacob.jpg"
-  },
+  // {name:"Jacob Reckhard", title:"Software Team", program:"Computer Engineering, Software Coop", quote:"I joined SPEAR because I thought it would be a fun challenge. I stayed because I was right.", imgPath:"jacob.jpg"},
 ];
 
 

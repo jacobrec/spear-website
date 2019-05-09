@@ -7,7 +7,7 @@ export default class SpearHeader extends Component {
         const tabs = [
             {display: "Info", link: "info"},
             {display: "People", link: "people"},
-            {display: "Sponsors", link: "sponsors"},
+            //{display: "Sponsors", link: "sponsors"},
             {display: "Blog", link: "blog"},
             {display: "Contact", link: "contact"},
         ]
