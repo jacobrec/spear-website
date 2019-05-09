@@ -61,7 +61,7 @@ function JoinView(props){
             <div className="col-33">
               <label>SPEAR team</label>
               <select name="team" >
-                {teams.map((t) => <option key={t.id} value={t.id}>{t.name}</option>)}
+                {teams.map((t) => <option key={t.id} value={t.id}> {t.name} </option>)}
               </select>
             </div>
           </div>

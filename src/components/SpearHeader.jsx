@@ -11,7 +11,7 @@ export default class SpearHeader extends Component {
             {display: "Blog", link: "blog"},
             {display: "Contact", link: "contact"},
         ]
-        const listItems = tabs.map((d) => <li><Link key={d.link} to={"/"+d.link}>{d.display}</Link></li>);
+        const listItems = tabs.map((d) => <li><Link key={d.link} to={"/"+d.link}> { d.display } </Link></li>);
         return (
             <header className="App-header">
 

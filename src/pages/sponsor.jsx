@@ -6,14 +6,18 @@ import './sponsor.css'
 function Sponsor(props){
   return (
     <div className={"sponsor hor" + (props.isLeft ? "" : " reverse")}>
+
       <div className="sponsor-image-holder">
         {console.log(require('../img/sponsors/' + props.imgPath))}
         <img alt={props.name + " logo"} src={require('../img/sponsors/' + props.imgPath)}/>
       </div>
+      
       <div className="sponsor-text-holder">
-        <p>{props.description}</p>
+        <p> { props.description } </p>
       </div>
+
       <div style={{width:'20vw'}}></div>
+
     </div>
   )
 }
