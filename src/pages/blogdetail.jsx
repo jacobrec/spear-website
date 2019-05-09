@@ -23,13 +23,17 @@ export default class SpearBlogDetailPage extends Component {
     const { id, title, author, post, tags, timestamp } = this.state
 
     return (
-      <div>
-        <h3>{title}</h3>
-        <p>{author}</p>
-        <p>{timestamp}</p>
-        <p>{post}</p>
-        <p>{id}</p>
-        { tags.map((t) => <p key={t}>{t}</p>) }
+      <div className="blog-post">
+        <div className="blog-header">
+          <h3 className="blog-title">{title}</h3>
+          <p className="blog-author">{author}</p>
+          <p className="blog-time">{prettyTime(timestamp)}</p>
+          <p className="blog-id">{id}</p>
+        </div>
+        <p className="blog-body" dangerouslySetInnerHTML={{__html: post}}></p>
+        <div className="blog-tags">
+          { tags.map((t) => <p key={t}>#{t}</p>) }
+        </div>
       </div>
     )
   }
@@ -49,4 +53,10 @@ export default class SpearBlogDetailPage extends Component {
       }
     }
   }
+}
+
+export function prettyTime(stamp) {
+    let t = new Date(stamp / 1000000)
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Dec']
+    return `${months[t.getMonth()]} ${t.getDate()}, ${t.getYear() + 1900}`
 }

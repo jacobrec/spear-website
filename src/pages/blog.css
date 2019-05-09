@@ -12,3 +12,41 @@
 .blog-summary-time{
   font-size: 1em;
 }
+
+.blog-post { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: var(--spear-bg-light);
+    margin: 10%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+.blog-post p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.blog-post img { 
+    width: 50vw!important;
+    height: auto!important;
+}
+.blog-post .blog-header { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: #000000AA
+}
+.blog-post .blog-header .blog-title { }
+.blog-post .blog-header .blog-time { }
+.blog-post .blog-header .blog-author { }
+.blog-post .blog-id {
+    display: none;
+}
+.blog-post .blog-tags { 
+    display: flex;
+}
+.blog-post .blog-tags p { 
+    padding: 10px;
+}

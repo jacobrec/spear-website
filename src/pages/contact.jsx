@@ -46,7 +46,7 @@ function JoinView(props){
   return (
     <div className="ver cent">
       <p> Hey, thanks for your interest. Please fill out this form, and we will get back to you! </p>
-      <form className="wide ver cent pad-x" method="post" action={serverLoc} onSubmit={(e) => handleForm(e)}>
+      <form className="col-75 ver cent pad-x" method="post" action={serverLoc} onSubmit={(e) => handleForm(e)}>
         <div className="fields wide">
           <div className="hor cent">
             <div className="col-33">

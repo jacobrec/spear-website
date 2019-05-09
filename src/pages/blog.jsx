@@ -3,6 +3,7 @@ import SpearTitle from "../components/SpearTitle"
 import { Link } from "react-router-dom";
 import axios from 'axios'
 import './blog.css'
+import { prettyTime } from './blogdetail'
 
 
 export const blogServerURL = "http://spaceualberta.ca:8049/blog/"
@@ -60,5 +61,5 @@ export default class SpearBlogPage extends Component {
 }
 
 function getPrettyDateTime(timestamp){
-    return <p className="blog-summary-time"> { timestamp } </p>
+    return <p className="blog-summary-time"> { prettyTime(timestamp) } </p>
   }
