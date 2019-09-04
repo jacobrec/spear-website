@@ -2,27 +2,35 @@ import React, { Component, Fragment } from "react"
 import SpearTitle from "../components/SpearTitle"
 import "./contact.css"
 
-const serverLoc = "http://spaceualberta.ca:8888"
+const serverLoc = "http://spaceualberta.ca:8049/join"
 //const serverLoc = "http://localhost:5000/join"
+
+const teams = [
+  {name:"Controls", id: "0"},
+  {name:"Autonomaus", id: "1"},
+  {name:"Science", id: "2"},
+  {name:"Mechanical", id: "3"},
+  {name:"Marketing", id: "4"},
+  {name:"Finance", id: "5"},
+]
 
 function handleForm(e){
   e.preventDefault()
   let data = {
-    teamid: document.forms[0].team.value,
-    name: document.forms[0].name.value,
-    email: document.forms[0].email.value,
-    msg: document.forms[0].message.value,
+    TeamId: document.forms[0].team.value,
+    TeamName: teams[document.forms[0].team.value].name,
+    Name: document.forms[0].name.value,
+    Email: document.forms[0].email.value,
+    Msg: document.forms[0].message.value,
   }
   sendData(data)
   return false
 }
 
 function sendData(data){
-  var xhr = new XMLHttpRequest();
+  let xhr = new XMLHttpRequest();
   xhr.open("POST", serverLoc, true);
   xhr.setRequestHeader("Content-Type", "application/json");
-  xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
-  xhr.withCredentials = true;
   xhr.onreadystatechange = function () {
     console.log("returned: ", xhr)
     if (xhr.readyState === 4 && xhr.status === 200) {
@@ -36,13 +44,6 @@ function sendData(data){
 
 
 function JoinView(props){
-  const teams = [
-    {name:"ECE", id: "0"},
-    {name:"Science", id: "1"},
-    {name:"Mechanical", id: "2"},
-    {name:"Marketing", id: "3"},
-    {name:"Finance", id: "4"},
-  ]
   return (
     <div className="ver cent">
       <p> Hey, thanks for your interest. Please fill out this form, and we will get back to you! </p>
@@ -112,7 +113,7 @@ export default class SpearContactPage extends Component {
     }
   }
 
-   componentDidMount () {
+  componentDidMount () {
      const script = document.createElement("script");
      script.src = "https://platform.twitter.com/widgets.js";
      script.async = true;
