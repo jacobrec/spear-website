@@ -1,7 +1,3 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export default class SpearNotFoundPage extends Component {
-    render(){
-        return <p>404</p>
-    }
-}
+export default () => <p>404</p>
