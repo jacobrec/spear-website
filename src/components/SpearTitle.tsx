@@ -25,17 +25,27 @@ const styleImg = {
   height: "3em"
 };
 
-export default () => (
+interface SpearTitleProps {
+  img: string,
+  title: string,
+}
+
+const SpearTitle = (props: SpearTitleProps) => (
   <div style={styleDivOuter}>
     <div style={styleDiv}>
-      {this.props.img && (
+      {props.img && (
         <img
           alt="A svg logo for decoration"
           style={styleImg}
-          src={this.props.img}
+          src={props.img}
         />
       )}
-      <h1 style={styleHeader}>{this.props.title}</h1>
+      // @ts-ignore
+      <h1 style={styleHeader}>
+        {props.title}
+      </h1>
     </div>
   </div>
 );
+
+export default SpearTitle;
