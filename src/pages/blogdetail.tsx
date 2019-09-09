@@ -48,7 +48,8 @@ const SpearBlogDetailPage: React.FC = (props: any) => {
           <p className="blog-time">{prettyTime(timestamp!)}</p>
           <p className="blog-id">{id}</p>
         </div>
-        // @ts-ignore
+        {/* 
+        // @ts-ignore */}
         <p className="blog-body" dangerouslySetInnerHTML={{ __html: post }}></p>
         <div className="blog-tags">
           {tags!.map(t => (

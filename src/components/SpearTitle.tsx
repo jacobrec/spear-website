@@ -40,7 +40,8 @@ const SpearTitle = (props: SpearTitleProps) => (
           src={props.img}
         />
       )}
-      // @ts-ignore
+      {/* 
+      // @ts-ignore */}
       <h1 style={styleHeader}>
         {props.title}
       </h1>
