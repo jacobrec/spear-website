@@ -1,39 +1,43 @@
-.spear-home-main-image{
-    width: 100vw;
+.spear-home-main-image {
+  width: 100vw;
 }
 
-.img-container{
-    position: relative;
-    text-align: center;
-    color: white;
+.img-container {
+  position: relative;
+  text-align: center;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .centered {
-    position: absolute;
-    top: 12%;
-    width: 100%;
-    background-color: #00000088;
-    font-size: 3em;
-    padding: 10px;
-    font-weight: bold;
+  position: absolute;
+  top: 12%;
+  width: 100%;
+  background-color: #00000088;
+  font-size: 3em;
+  padding: 10px;
+  font-weight: bold;
+  flex-wrap: wrap;
 }
 .page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .mission {
-    width: 50vw;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
+  width: 50vw;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
 }
 .mission div {
-    font-size: 1.5em;
+  font-size: 1.5em;
 }
 .mission h2 {
-    font-size: 3em;
+  font-size: 3em;
 }
