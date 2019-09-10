@@ -26,6 +26,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 100%;
 }
 .blog-post img { 
     width: 50vw!important;
@@ -46,6 +47,10 @@
 }
 .blog-post .blog-tags { 
     display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+    align-content: center;
+    justify-content: center;
 }
 .blog-post .blog-tags p { 
     padding: 10px;

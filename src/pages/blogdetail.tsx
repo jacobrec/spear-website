@@ -60,9 +60,7 @@ const SpearBlogDetailPage: React.FC = (props: any) => {
     );
   }
 
-  const loadingRender = (): ReactElement => <p>Loading...</p>
-
-  return state.id === -1 ? loadingRender() : normalRender()
+  return state.id === -1 ? <p>Loading...</p> : normalRender()
 
 }
 
