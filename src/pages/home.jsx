@@ -2,7 +2,7 @@ import React from "react";
 import "./home.css";
 
 export default () => (
-  <>
+  <div className="page">
     <div className="img-container">
       <img
         alt="some members of SPEAR with our rover, this was taken at our first competition"
@@ -24,5 +24,5 @@ export default () => (
         Technology and Diversity in Engineering.
       </div>
     </div>
-  </>
+  </div>
 );
