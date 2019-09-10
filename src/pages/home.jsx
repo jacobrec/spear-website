@@ -9,7 +9,9 @@ export default () => (
         className="spear-home-main-image"
         src={require("../img/team.jpg")}
       />
-      <div className="centered">Space Exploration Alberta Robotics</div>
+      <div className="imagebar">
+        <div className="centered">Space Exploration Alberta Robotics</div>
+      </div>
     </div>
 
     <div className="ver cent pad mission">
