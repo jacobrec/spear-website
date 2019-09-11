@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
 import SpearTitle from "../components/SpearTitle"
 
-export default class SpearInfoPage extends Component {
-    render(){
+const SpearInfoPage: React.FC =  () => {
+
         const vlogs = ["lDlzEwEM7iU", "wTmVX3USq54", "Qt7kQpG_Ohk"]
         return (
-            <div>
+            <>
                 <SpearTitle title="Info" img={require('../img/logos/supporters.svg')}/>
 
                 <div className="ver cent">
@@ -17,7 +17,8 @@ export default class SpearInfoPage extends Component {
                             allowFullScreen></iframe>
                     ))}
                 </div>
-            </div>
+            </>
         )
     }
-}
+
+export default SpearInfoPage;
