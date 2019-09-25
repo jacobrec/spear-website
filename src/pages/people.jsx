@@ -70,13 +70,28 @@ const ryan = {
     quote:"I joined SPEAR because I wanted to learn about robotics while working on a project I could be proud of. I stayed for the pals I made!",
     imgPath:"ryan.jpg"
   }
+const pat = {
+    name:"Pat Makhacheva",
+    title:"Science Lead",
+    program:"Biology and Psychology Double Major",
+    quote:"I joined SPEAR cause Jacob made me",
+    imgPath:"pat.jpg"
+  }
+const christiana = {
+    name:"Christiana Garros",
+    title:"Marketing Lead",
+    program:"Biology and Dinosaur Double Major",
+    quote:"I also joined SPEAR cause Jacob made me",
+    imgPath:"christiana.jpg"
+  }
 
 
 const people = [
   andre,
   david,
-  robert,
   ryan,
+  pat,
+  christiana,
 ];
 
 
