@@ -8,7 +8,7 @@ export default class SpearHomePage extends Component {
       <div className="page">
         <div className="img-container">
           <img alt="some members of SPEAR with our rover, this was taken at our first competition" className="spear-home-main-image" src={require('../img/team.jpg')} />
-          <div className="centered">Space Exploration Alberta Robotics</div>
+          <h1 className="centered">Space Exploration Alberta Robotics</h1>
         </div>
 
         <div className="ver cent pad mission">
