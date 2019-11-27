@@ -23,7 +23,7 @@ const manmeet = {
   }
 const andre = {
     name: "Andre Ulliac",
-    title: "Project Manager",
+    title: "Co Project Manager",
     program: "Mechanical Engineering Coop",
     quote: "I joined SPEAR because space is awesome and so are robots",
     imgPath: "andre.jpg"
@@ -51,7 +51,7 @@ const robert = {
   }
 const navras = {
     name: "Navras Kamal",
-    title: "Project Manager",
+    title: "Co Project Manager",
     program: "Computer Engineering, Nano Coop",
     quote: "I joined SPEAR because it was a unique opportunity to help start up a relatively new design project",
     imgPath: "navras.jpg"
@@ -80,7 +80,7 @@ const pat = {
 const christiana = {
     name:"Christiana Garros",
     title:"Marketing Lead",
-    program:"Biology and Dinosaur Double Major",
+    program:"Biology Major",
     quote:"I also joined SPEAR cause Jacob made me",
     imgPath:"christiana.jpg"
   }
@@ -88,6 +88,7 @@ const christiana = {
 
 const people = [
   andre,
+  navras,
   david,
   ryan,
   pat,
