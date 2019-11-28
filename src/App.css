@@ -1,8 +1,8 @@
 html{
     --spear-bg-color: #242927;
     --spear-bg-light: #384d61;
-    --spear-green: #009933;
-    --spear-green-dark: #00993338;
+    --spear-green: #9F412C;
+    --spear-green-dark: #9F412C38;
     background-color: var(--spear-bg-color);
     color: white;
 
