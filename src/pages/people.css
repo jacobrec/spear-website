@@ -20,11 +20,12 @@
 }
 .spear-person-avatar img{
     border-radius: 50%;
-    width: 100px;
-    height: 100px;
+    width: 115px;
+    height: 115px;
 }
 .spear-person-text{
     margin: 1vw;
+    flex: 1;
 }
 .spear-person-name{
     font-size: 2em;
