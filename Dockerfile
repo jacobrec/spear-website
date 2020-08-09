@@ -9,21 +9,21 @@ ENV GOROOT /usr/lib/go
 ENV GOPATH /go
 ENV PATH /go/bin:$PATH
 
-# setup kamal
+RUN go get github.com/jacobrec/jebs
 RUN go get github.com/jacobrec/kamal/server
 RUN go get github.com/jacobrec/kamal/cli
 
+# setup kamal
 RUN /go/src/github.com/jacobrec/kamal/install.sh
 
 ## kamal rules
 RUN kamal add ${HOST} 127.0.0.1:3000
-RUN kamal add api.${HOST} 127.0.0.1:8049/email
+RUN kamal add jebs.${HOST} 127.0.0.1:8049
 RUN kamal add admin.${HOST} 127.0.0.1:8049/author
 RUN kamal add join.${HOST} 127.0.0.1:8081
 RUN kamal ls
 
 # setup jebs
-RUN go get github.com/jacobrec/jebs
 # TODO: configure DB stuff
 
 
