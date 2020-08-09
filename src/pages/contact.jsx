@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react"
 import SpearTitle from "../components/SpearTitle"
 import "./contact.css"
 
-const serverLoc = "http://spaceualberta.ca:8049/join"
+const serverLoc = "http://api.spaceualberta.ca"
 //const serverLoc = "http://localhost:5000/join"
 
 const teams = [
