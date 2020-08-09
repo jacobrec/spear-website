@@ -1,3 +1,3 @@
 # Spear Website
-To run, type `npm start`. To deploy, run `npm build --prod`, then use a static
-[http server](https://gist.github.com/willurd/5720255)
+`deploy.sh` is for development. It runs it locally, on the host system
+`docker_deploy.sh` is for production or development. It runs it in a docker container. It also runs all the spear server stuff for emails, blogs and forms
