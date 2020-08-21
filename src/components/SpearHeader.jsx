@@ -9,6 +9,7 @@ export default class SpearHeader extends Component {
             {display: "People", link: "people"},
             //{display: "Sponsors", link: "sponsors"},
             {display: "Blog", link: "blog"},
+            {display: "FAQ", link: "faq"},
             {display: "Contact", link: "contact"},
         ]
         const listItems = tabs.map((d) => <li><Link key={d.link} to={"/"+d.link}> { d.display } </Link></li>);

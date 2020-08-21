@@ -11,6 +11,7 @@ import SpearPeoplePage from "./pages/people"
 import SpearContactPage from "./pages/contact"
 import SpearInfoPage from "./pages/info"
 import SpearSponsorPage from "./pages/sponsor"
+import SpearFaqPage from "./pages/faq"
 import SpearNotFoundPage from "./pages/404"
 
 import './App.css';
@@ -38,6 +39,7 @@ class App extends Component {
             <Route exact path="/contact" component={SpearContactPage}/>
             <Route exact path="/info" component={SpearInfoPage}/>
             <Route exact path="/sponsors" component={SpearSponsorPage}/>
+            <Route exact path="/faq" component={SpearFaqPage}/>
             <Route component={SpearNotFoundPage} />
           </Switch>
           <SpearFooter/>
