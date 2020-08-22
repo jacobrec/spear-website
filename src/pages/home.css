@@ -37,3 +37,22 @@
 .mission h2 {
     font-size: 3em;
 }
+a.Join-Button {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2em;
+    font-weight: bold;
+    background-color: #9F412C38;
+    border-radius: 25px;
+    padding: 0.5em 0.5em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 2em;
+    margin-bottom: 0.83em;
+    margin-left: inherit;
+    margin-right: inherit;
+    
+}
+a:hover, a:active.Join-Button{
+    background-color: #9F412C;
+}

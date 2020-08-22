@@ -22,6 +22,7 @@ export default class SpearHomePage extends Component {
             goals. We are proud to help promote groups such as, Women in
             Engineering, Science, and Technology and Diversity in Engineering.
           </div>
+            <a href="http://join.spaceualberta.ca/" className="Join-Button">Join SPEAR</a>
         </div>
       </div>
     )
