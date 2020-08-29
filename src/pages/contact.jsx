@@ -50,10 +50,6 @@ export default class SpearContactPage extends Component {
         <IntroView nav={(v) => this.gotoView(v)}/>
       </Fragment>
     )
-
-    if(this.state.view === 1){
-      view = <JoinView nav={(v) => this.gotoView(v)}/>
-    }
     return (
       <div className="ver">
         <SpearTitle title="Contact" img={require("../img/logos/contact.svg")}/>
