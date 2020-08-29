@@ -2,86 +2,6 @@ import React, { Component, Fragment } from "react"
 import SpearTitle from "../components/SpearTitle"
 import "./contact.css"
 
-const serverLoc = "http://api.spaceualberta.ca"
-//const serverLoc = "http://localhost:5000/join"
-
-const teams = [
-  {name:"Controls", id: "0"},
-  {name:"Autonomaus", id: "1"},
-  {name:"Science", id: "2"},
-  {name:"Mechanical", id: "3"},
-  {name:"Marketing", id: "4"},
-  {name:"Finance", id: "5"},
-]
-
-function handleForm(e){
-  e.preventDefault()
-  let data = {
-    TeamId: document.forms[0].team.value,
-    TeamName: teams[document.forms[0].team.value].name,
-    Name: document.forms[0].name.value,
-    Email: document.forms[0].email.value,
-    Msg: document.forms[0].message.value,
-  }
-  sendData(data)
-  return false
-}
-
-function sendData(data){
-  let xhr = new XMLHttpRequest();
-  xhr.open("POST", serverLoc, true);
-  xhr.setRequestHeader("Content-Type", "application/json");
-  xhr.onreadystatechange = function () {
-    console.log("returned: ", xhr)
-    if (xhr.readyState === 4 && xhr.status === 200) {
-      alert("Thanks, got your message");
-      // window.location.href = "http://spaceualberta.ca";
-    }
-  };
-  xhr.send(JSON.stringify(data));
-  console.log("Sent: ", data)
-}
-
-
-function JoinView(props){
-  return (
-    <div className="ver cent">
-      <p> Hey, thanks for your interest. Please fill out this form, and we will get back to you! </p>
-      <form className="col-75 ver cent pad-x" method="post" action={serverLoc} onSubmit={(e) => handleForm(e)}>
-        <div className="fields wide">
-          <div className="hor cent">
-            <div className="col-33">
-              <label>Name</label>
-              <input type="text" name="name"/>
-            </div>
-            <div className="col-33">
-              <label>Email</label>
-              <input type="text" name="email"/>
-            </div>
-
-            <div className="col-33">
-              <label>SPEAR team</label>
-              <select name="team" >
-                {teams.map((t) => <option key={t.id} value={t.id}> {t.name} </option>)}
-              </select>
-            </div>
-          </div>
-
-          <div className="field hor wide">
-            <label>Message</label>
-            <textarea className="wide" name="message" rows="4"></textarea>
-          </div>
-        </div>
-        <ul className="actions hor drift wide">
-          <li><input type="submit" value="Send Message" className="primary" /></li>
-          <li><input type="reset" value="Reset" /></li>
-        </ul>
-      </form>
-
-    </div>
-  )
-}
-
 function IntroView (props) {
   const tWidth = 350;
   const tHeight = 500;
@@ -121,7 +41,7 @@ export default class SpearContactPage extends Component {
     }
 
   gotoView(view){
-    this.setState({ view: view })
+    window.location.href = "http://join.spaceualberta.ca"
   }
 
   render(){

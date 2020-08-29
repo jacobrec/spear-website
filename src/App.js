@@ -5,8 +5,6 @@ import SpearHeader from "./components/SpearHeader"
 import SpearFooter from "./components/SpearFooter"
 
 import SpearHomePage from "./pages/home"
-import SpearBlogPage from "./pages/blog"
-import SpearBlogDetailPage from "./pages/blogdetail"
 import SpearPeoplePage from "./pages/people"
 import SpearContactPage from "./pages/contact"
 import SpearInfoPage from "./pages/info"
@@ -32,8 +30,6 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={SpearHomePage}/>
             <Route exact path="/info" component={SpearInfoPage}/>
-            <Route exact path="/blog" component={SpearBlogPage}/>
-            <Route exact path="/blog/:id" component={SpearBlogDetailPage}/>
             <Route exact path="/people" component={SpearPeoplePage}/>
             <Route exact path="/contact" component={SpearContactPage}/>
             <Route exact path="/info" component={SpearInfoPage}/>
