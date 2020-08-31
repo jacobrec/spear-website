@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 
 const styleDiv = {
-  width: '30vw',
+  maxWidth: '80vw',
+  minWidth: '10vw',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-around',
@@ -18,11 +19,12 @@ const styleDivOuter = {
 
 const styleHeader = {
   textTransform: 'uppercase',
-  fontSize: "3em"
+  fontSize: "4vw"
 };
 
 const styleImg = {
-  height: "3em"
+  height: "4vw",
+  padding: "1.5vw"
 };
 
 export default class SpearTitle extends Component {
