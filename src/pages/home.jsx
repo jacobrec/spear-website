@@ -8,7 +8,7 @@ export default class SpearHomePage extends Component {
     return (
       <div className="page">
         <div className="img-container">
-          <img alt="some members of SPEAR with our rover, this was taken at our first competition" className="spear-home-main-image" src={require('../img/team.jpg')} />
+          <img alt="some members of SPEAR with our rover, this was taken at our second competition" className="spear-home-main-image" src={require('../img/team.jpg')} />
           <h1 className="centered">Space Exploration Alberta Robotics</h1>
         </div>
          <div className="ver cent mission">
@@ -23,6 +23,7 @@ export default class SpearHomePage extends Component {
             Engineering, Science, and Technology and Diversity in Engineering.
             </div>
             <a href="http://join.spaceualberta.ca/" className="Join-Button">Join SPEAR</a>
+            <img alt="lineart of our current rover iteration: CASE" className="case" src={require('../img/outline.png')}/>
          </div>
        </div>
     )
