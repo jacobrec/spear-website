@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './home.css';
+import caseimage from '../img/outline.png';
 
 
 export default class SpearHomePage extends Component {
@@ -10,10 +11,9 @@ export default class SpearHomePage extends Component {
           <img alt="some members of SPEAR with our rover, this was taken at our first competition" className="spear-home-main-image" src={require('../img/team.jpg')} />
           <h1 className="centered">Space Exploration Alberta Robotics</h1>
         </div>
-
-        <div className="ver cent pad mission">
-          <h2>Our Mission</h2>
-          <div>
+         <div className="ver cent mission">
+           <h2>Our Mission</h2>
+            <div>
             Our student project group, Space Exploration Alberta Robotics, aims to
             promote space exploration technology and robotics through educational
             outreach and participating in design competitions. SPEAR is motivated
@@ -21,10 +21,10 @@ export default class SpearHomePage extends Component {
             outreach we also support other groups at the university with positive
             goals. We are proud to help promote groups such as, Women in
             Engineering, Science, and Technology and Diversity in Engineering.
-          </div>
+            </div>
             <a href="http://join.spaceualberta.ca/" className="Join-Button">Join SPEAR</a>
-        </div>
-      </div>
+         </div>
+       </div>
     )
   }
 }
