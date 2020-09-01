@@ -1,3 +1,3 @@
 TAG=spear-website
-docker build --build-arg -t $TAG .
+docker build -t $TAG .
 docker run -p 80:80 -d $TAG
