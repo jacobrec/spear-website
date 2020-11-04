@@ -14,6 +14,13 @@ import './people.css'
   },
   * */
 
+  const jacob = {
+    name:"Jacob Reckhard",
+    title:"Project Manager",
+    program:"Computer Engineering, Software Coop",
+    quote:"I joined SPEAR because I thought it would be a fun challenge. I stayed because I was right.",
+    imgPath:"jacob.jpg"
+  }
 const manmeet = {
     name:"Manmeet Brar",
     title:"Project Manager",
@@ -84,14 +91,27 @@ const christiana = {
     quote:"I also joined SPEAR cause Jacob made me",
     imgPath:"christiana.jpg"
   }
+const mitchell = {
+    name:"Mitchell Epp",
+    title:"Autonomy Lead",
+    program:"Computer Engineering, Software Co-op",
+    quote:"I joined SPEAR to program robots.",
+    imgPath:"mitchell.png"
+  }
+const navodi = {
+    name:"Navodhi Ranatunga",
+    title:"Science Lead",
+    program:"Science, Specialization in Geology",
+    quote:"I joined spear to gain experience in applying my science knowledge in a creative and  pratical way with students from different disciplines.",
+    imgPath:"navodi.png"
+  }
 
 
 const people = [
-  andre,
-  navras,
-  david,
+  jacob,
   ryan,
-  pat,
+  mitchell,
+  navodi,
   christiana,
 ];
 
