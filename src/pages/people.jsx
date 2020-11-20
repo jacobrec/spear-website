@@ -72,7 +72,7 @@ const kyle = {
   }
 const ryan = {
     name:"Ryan Shukla",
-    title:"Software Team",
+    title:"Autonomy Lead",
     program:"Computer Engineering, Software Coop",
     quote:"I joined SPEAR because I wanted to learn about robotics while working on a project I could be proud of. I stayed for the pals I made!",
     imgPath:"ryan.jpg"
@@ -105,6 +105,13 @@ const navodi = {
     quote:"I joined spear to gain experience in applying my science knowledge in a creative and  pratical way with students from different disciplines.",
     imgPath:"navodi.png"
   }
+const lani = {
+    name:"Noelani “Lani” Breton",
+    title:"Mechanical Engineering Lead",
+    program:"Mechanical Engineering Co-op ",
+    quote:"I joined SPEAR to become part of a really cool team of people doing really cool things. Also, space robots.",
+    imgPath:"lani.png"
+  }
 
 
 const people = [
@@ -113,6 +120,7 @@ const people = [
   mitchell,
   navodi,
   christiana,
+  lani,
 ];
 
 
