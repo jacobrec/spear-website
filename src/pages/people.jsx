@@ -110,7 +110,7 @@ const lani = {
     title:"Mechanical Engineering Lead",
     program:"Mechanical Engineering Co-op ",
     quote:"I joined SPEAR to become part of a really cool team of people doing really cool things. Also, space robots.",
-    imgPath:"lani.png"
+    imgPath:"lani.jpg"
   }
 
 
