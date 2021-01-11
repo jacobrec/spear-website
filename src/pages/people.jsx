@@ -92,7 +92,7 @@ const christiana = {
     imgPath:"christiana.jpg"
   }
 const mitchell = {
-    name:"Mitchell Epp",
+    name:"Rain Epp",
     title:"Autonomy Lead",
     program:"Computer Engineering, Software Co-op",
     quote:"I joined SPEAR to program robots.",
@@ -112,6 +112,13 @@ const lani = {
     quote:"I joined SPEAR to become part of a really cool team of people doing really cool things. Also, space robots.",
     imgPath:"lani.jpg"
   }
+const jarrett = {
+    name:"Jarrett Yu",
+    title:"Controls Lead",
+    program:"Computer Engineering Co-op ",
+    quote:"I joined SPEAR to try out some new skills, I stayed for the team, and to work on robot stuff",
+    imgPath:"jarrett.jpg"
+  }
 
 
 const people = [
@@ -121,6 +128,7 @@ const people = [
   navodi,
   christiana,
   lani,
+  jarrett,
 ];
 
 
