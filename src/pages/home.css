@@ -1,5 +1,7 @@
 .spear-home-main-image{
     width: 100vw;
+    border-bottom: 1rem solid #7A3023;
+    border-top: 1rem solid #7A3023;
 }
 
 .img-container{
@@ -13,7 +15,7 @@
     top: 12%;
     width: 100%;
     background-color: #00000088;
-    font-size: 3em;
+    font-size: 6vw;
     padding: 10px;
     font-weight: bold;
 }
@@ -36,10 +38,10 @@
     padding-top: 2%;
 }
 .mission div {
-    font-size: 1.5em;
+    font-size: 4vh;
 }
 .mission h2 {
-    font-size: 3em;
+    font-size: 5vw;
 }
 a.Join-Button {
     font-family: 'Orbitron', sans-serif;

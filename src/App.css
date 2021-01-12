@@ -2,7 +2,7 @@ html{
     --spear-bg-color: #242927;
     --spear-bg-light: #384d61;
     --spear-green: #9F412C;
-    --spear-green-dark: #9F412C38;
+    --spear-green-dark: #7A3023;
     background-color: var(--spear-bg-color);
     color: white;
 
@@ -55,7 +55,7 @@ a{
     margin: 10% 0;
 }
 .pad{
-    padding: 10%;
+    padding: 5%;
 }
 .pad-x{
     padding: 0 10%;
@@ -88,13 +88,13 @@ ul{
 }
 /* Styling for Header Begin */
 .spear-mountains{
-    width: 70%;
-    height: 70%;
-    padding-left: 30%
+    width: 50%;
+    margin-left: 15rem;
 }
 .spear-mountains-wrapper {
     width: 70vw;
     min-height: 15vw;
+    margin-left: 2.5rem;
 }
 .spear-nav-list li{
     display: flex;
@@ -121,10 +121,9 @@ ul{
     text-decoration: none;
 }
 .spear-logo {
-    height: 10vw;
-    width: 10vw;
-    margin: 2.5vw;
-    margin-left: 12.5vw;
+    height: 12vw;
+    width: 12vw;
+    margin-left: 3vw;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
